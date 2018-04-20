@@ -54,7 +54,8 @@ Thumbs.db
 
 # Visual Studio 2015 cache/options directory
 .vs/
-AaronPortfolio/wwwroot/*
+AaronPortfolio/wwwroot/dist
+AaronPortfolio/wwwroot
 
 /yarn.lock
 
