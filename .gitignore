@@ -10,6 +10,7 @@ TestResults/
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
+node_modules
 x64/
 x86/
 build/
@@ -18,6 +19,9 @@ bin/
 Bin/
 obj/
 Obj/
+
+# Distribution files
+AaronPortfolio/wwwroot/dist
 
 # globs
 Makefile.in
@@ -54,8 +58,6 @@ Thumbs.db
 
 # Visual Studio 2015 cache/options directory
 .vs/
-AaronPortfolio/wwwroot/dist
-AaronPortfolio/wwwroot
 
 /yarn.lock
 
