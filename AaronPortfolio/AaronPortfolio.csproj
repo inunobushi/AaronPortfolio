@@ -24,6 +24,8 @@
     <Folder Include="Server\" />
     <Folder Include="Server\Models\" />
     <Folder Include="Server\Controllers\" />
+    <Folder Include="ClientApp\components\HomeComponent\" />
+    <Folder Include="ClientApp\components\NavbarComponent\" />
   </ItemGroup>
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
     <!-- Ensure Node.js is installed -->
