@@ -1,7 +1,7 @@
 ﻿import * as React from 'react';
 import {Link, Redirect} from 'react-router-dom';
 import axios from 'axios';
-import AuthService from '../../services/authService';
+import AuthService from '../../Services/AuthService';
 import { LoginModel }from '../../Models/login.model';
 
 export class LoginComponent extends React.Component{
