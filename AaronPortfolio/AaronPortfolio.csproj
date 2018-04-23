@@ -24,18 +24,18 @@
     <Folder Include="Server\" />
     <Folder Include="Server\Models\" />
     <Folder Include="Server\Controllers\" />
-    <Folder Include="ClientApp\components\HomeComponent\" />
-    <Folder Include="ClientApp\components\NavbarComponent\" />
-    <Folder Include="ClientApp\components\NavMenuComponent\" />
-    <Folder Include="ClientApp\js\" />
-    <Folder Include="ClientApp\fonts\" />
-    <Folder Include="ClientApp\components\AboutComponent\" />
-    <Folder Include="ClientApp\components\WorkComponent\" />
-    <Folder Include="ClientApp\components\LoginComponent\" />
-    <Folder Include="ClientApp\components\ScheduleComponent\" />
-    <Folder Include="ClientApp\components\ContactComponent\" />
-    <Folder Include="ClientApp\services\" />
-    <Folder Include="ClientApp\models\" />
+    <Folder Include="ClientApp\Components\HomeComponent\" />
+    <Folder Include="ClientApp\Components\NavbarComponent\" />
+    <Folder Include="ClientApp\Components\NavMenuComponent\" />
+    <Folder Include="ClientApp\JavaScript\" />
+    <Folder Include="ClientApp\Fonts\" />
+    <Folder Include="ClientApp\Components\AboutComponent\" />
+    <Folder Include="ClientApp\Components\WorkComponent\" />
+    <Folder Include="ClientApp\Components\LoginComponent\" />
+    <Folder Include="ClientApp\Components\ScheduleComponent\" />
+    <Folder Include="ClientApp\Components\ContactComponent\" />
+    <Folder Include="ClientApp\Services\" />
+    <Folder Include="ClientApp\Models\" />
   </ItemGroup>
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
     <!-- Ensure Node.js is installed -->
