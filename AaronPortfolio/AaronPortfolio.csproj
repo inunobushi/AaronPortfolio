@@ -26,6 +26,16 @@
     <Folder Include="Server\Controllers\" />
     <Folder Include="ClientApp\components\HomeComponent\" />
     <Folder Include="ClientApp\components\NavbarComponent\" />
+    <Folder Include="ClientApp\components\NavMenuComponent\" />
+    <Folder Include="ClientApp\js\" />
+    <Folder Include="ClientApp\fonts\" />
+    <Folder Include="ClientApp\components\AboutComponent\" />
+    <Folder Include="ClientApp\components\WorkComponent\" />
+    <Folder Include="ClientApp\components\LoginComponent\" />
+    <Folder Include="ClientApp\components\ScheduleComponent\" />
+    <Folder Include="ClientApp\components\ContactComponent\" />
+    <Folder Include="ClientApp\services\" />
+    <Folder Include="ClientApp\models\" />
   </ItemGroup>
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
     <!-- Ensure Node.js is installed -->
