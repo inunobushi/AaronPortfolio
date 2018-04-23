@@ -21,7 +21,7 @@ obj/
 Obj/
 
 # Distribution files
-AaronPortfolio/wwwroot/dist
+wwwroot/dist/*
 
 # globs
 Makefile.in
