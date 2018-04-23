@@ -16,7 +16,7 @@ export class HomeComponent extends React.Component{
                                     <div className="home-text wow fadeIn text-center">
                                         <h1 className="cd-headline clip is-full-width">
                                             I Am
-                                            <span className="cd-words-wrapper">
+                                            <span className="cd-words-wrapper" style={{width: 266 + 'px', overflow: 'hidden'}}>
                                                 <b className="is-hidden">Creative</b>
                                                 <b className="is-hidden">Honest</b>
                                                 <b className="is-visible">John Doe</b>
