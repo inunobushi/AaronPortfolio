@@ -1,6 +1,14 @@
 import 'bootstrap';
-import './css/reva-default-color.css';
-import './css/reva-main.css';
+import './CSS/reva-default-color.css';
+import './CSS/reva-main.css';
+import './CSS/lamisa-animate.css';
+import './CSS/lamisa-animate-header.css';
+import './CSS/lamisa-color.css';
+import './CSS/lamisa-default.css';
+import './CSS/lasima-jquerysctipttop.css';
+import './CSS/lamisa-style.css';
+import './CSS/_flaticon.less';
+
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
