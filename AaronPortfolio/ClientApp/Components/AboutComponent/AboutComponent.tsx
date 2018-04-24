@@ -9,10 +9,6 @@ export class AboutComponent extends React.Component{
         super(props);
     }
 
-    Page(){
-        class1: 'about-social-icon';
-        class2: 'about-social'
-    }
     render() {
         return( 
             <div className="main-page-content">
