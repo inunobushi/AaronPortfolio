@@ -28,7 +28,7 @@ export class NavbarComponent extends React.Component {
                             <div className="row">
                                 <div className="col-md-2 col-sm-2">
                                     <NavLink to={ '/' } className="site-title home-page">
-                                        <h3>Lamisa</h3>
+                                        <h3>Aaron Fairweather</h3>
                                     </NavLink>{/*<!-- end site-title -->*/}
                                 </div>{/*}<!-- end col-md-4 -->*/}
                                 <div className="navbar-header">
