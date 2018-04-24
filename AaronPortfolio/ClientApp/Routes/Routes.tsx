@@ -7,27 +7,37 @@ import { WorkComponent } from '../Components/WorkComponent/WorkComponent';
 import { LoginComponent } from '../Components/LoginComponent/LoginComponent';
 import { ScheduleComponent } from '../Components/ScheduleComponent/ScheduleComponent';
 import { ContactComponent } from '../Components/ContactComponent/ContactComponent';
+import { RegistrationComponent } from '../Components/RegistrationComponent/RegistrationComponent';
 import { NavMenuComponent } from '../Components/NavMenuComponent/NavMenuComponent';
 import { NavbarComponent } from '../Components/NavbarComponent/NavbarComponent';
 
-
-export const routes = 
-    
-        <div className="app">
-            <NavbarComponent/>
-
-            <Switch>
-                <Route exact path="/" render={()=> <HomeComponent/>}/>
-                <Route path="/About" render={()=> <AboutComponent/>}/>
-                <Route path="/Work" render={()=> <WorkComponent/>}/>
-                <Route path="/Login" render={()=> <LoginComponent/>}/>
-                <Route path="/Schedule" render={()=> <ScheduleComponent/>}/>
-                <Route path="/" render={()=> <HomeComponent/>}/>
-                <Route path="/Contact" render={()=> <ContactComponent/>}/>
-                
-            </Switch>
+import PrivateRoute from '../Services/AnonymousRoute';
 
 
-        </div>
+export const routes = (props:any) => {
+        const width = window.innerWidth;
+        return (
+            <div className="app">
+                {
+                   width < 768 && <NavMenuComponent/>
+                }
 
-    
+                {
+                   width > 768 && <NavbarComponent/>
+                }
+
+                <Switch>
+                    <Route exact path="/" render={()=> <HomeComponent/>}/>
+                    <Route path="/About" render={()=> <AboutComponent/>}/>
+                    <Route path="/Work" render={()=> <WorkComponent/>}/>
+                    <Route path="/Login" render={()=> <LoginComponent/>}/>
+                    <Route exact path="/" render={()=> <HomeComponent/>}/>
+                    <PrivateRoute path="/Schedule" component={ScheduleComponent}/>
+                    <Route path="/Registration" render={()=><RegistrationComponent/>}/>
+                    <Route path="/Contact" render={()=> <ContactComponent/>}/>
+                </Switch>
+
+
+            </div>
+        )
+}
