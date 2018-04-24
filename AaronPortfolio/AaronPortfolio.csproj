@@ -36,6 +36,10 @@
     <Folder Include="ClientApp\Components\ContactComponent\" />
     <Folder Include="ClientApp\Services\" />
     <Folder Include="ClientApp\Models\" />
+    <Folder Include="ClientApp\Components\CopyrightComponent"/>
+    <Folder Include="ClientApp\Components\RegistrationComponent\" />
+    <Folder Include="ClientApp\Components\RegistrationComponent\RegistrationForm"/>
+    <Folder Include="ClientApp\Components\RegistrationComponent\RegistrationHeader"/>
   </ItemGroup>
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
     <!-- Ensure Node.js is installed -->
