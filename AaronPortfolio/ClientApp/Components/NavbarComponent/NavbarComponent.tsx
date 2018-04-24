@@ -2,10 +2,21 @@
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 
-export class NavbarComponent extends React.Component {
+import AuthService from '../../services/authService';
 
+export class NavbarComponent extends React.Component {
+    private authService:AuthService = new AuthService();
     constructor(props: any){
         super(props);
+        this.isUserLoggedIn = this.isUserLoggedIn.bind(this);
+        this.logout = this.logout.bind(this);
+    }
+
+    isUserLoggedIn(){
+        return this.authService.getIsLoggedIn();
+    };
+    logout = () => {
+        this.authService.logout();
     }
 
     render() {
@@ -35,19 +46,22 @@ export class NavbarComponent extends React.Component {
                                                 <NavLink to="/" className="active">Home</NavLink>
                                             </li>
                                             <li>
-                                                <NavLink to="/About">About</NavLink>
-                                            </li>
-                                            <li>
                                                 <NavLink to="/Work">Work</NavLink>
                                             </li>
                                             <li>
-                                                <NavLink to="/Login">Login</NavLink>
+                                                <NavLink to="/About">About</NavLink>
                                             </li>
                                             <li>
-                                                <NavLink to="/Schedule">Schedule</NavLink>
+                                                { !this.isUserLoggedIn() && <NavLink to="/Login">Login</NavLink>}
                                             </li>
                                             <li>
-                                                <NavLink exact to="/">Logout</NavLink>
+                                                { this.isUserLoggedIn() &&<NavLink exact to="/" onClick={this.logout}>Logout</NavLink>}
+                                            </li>
+                                            <li>
+                                                { this.isUserLoggedIn() && <NavLink to="/Schedule">Schedule</NavLink>}
+                                            </li>
+                                            <li>
+                                                { !this.isUserLoggedIn() &&<NavLink to="/Registration">Registration</NavLink>}
                                             </li>
                                             <li>
                                                 <NavLink to="/Contact">Contact</NavLink>
