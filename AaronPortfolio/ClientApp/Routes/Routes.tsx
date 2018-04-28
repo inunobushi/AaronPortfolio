@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Route,  Switch } from 'react-router-dom';
+import { BrowserRouter, Route,  Switch } from 'react-router-dom';
 import * as ReactDOM from 'react-dom';
 import { HomeComponent } from '../Components/HomeComponent/HomeComponent';
 import { AboutComponent } from '../Components/AboutComponent/AboutComponent';
@@ -13,19 +13,20 @@ import { NavbarComponent } from '../Components/NavbarComponent/NavbarComponent';
 
 import PrivateRoute from '../Services/AnonymousRoute';
 
-
-export const routes = (props:any) => {
+export const App = (props:any) => {
         const width = window.innerWidth;
+        const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href')!;
         return (
+        <BrowserRouter basename={ baseUrl }>
             <div className="app">
-                {
-                   width < 768 && <NavMenuComponent/>
+               {
+                (width < 768) && <NavMenuComponent/>
                 }
 
                 {
-                   width > 768 && <NavbarComponent/>
-                }
-
+                (width > 768) && <NavbarComponent/>
+                } 
+                
                 <Switch>
                     <Route exact path="/" render={()=> <HomeComponent/>}/>
                     <Route path="/About" render={()=> <AboutComponent/>}/>
@@ -36,8 +37,9 @@ export const routes = (props:any) => {
                     <Route path="/Registration" render={()=><RegistrationComponent/>}/>
                     <Route path="/Contact" render={()=> <ContactComponent/>}/>
                 </Switch>
-
-
             </div>
+        </BrowserRouter>
         )
 }
+
+export default App;

@@ -10,18 +10,18 @@ export class LoginComponent extends React.Component{
                 super(props);
                 
             }
-            private authService: AuthService = new AuthService();
+            private AuthService: AuthService = new AuthService();
             user:LoginModel = new LoginModel();
 
             loginUser = (e:any) =>{
                 e.preventDefault();
-                this.authService.login({
+                this.AuthService.login({
                     Email:this.user.Email['value'],
                     Password:this.user.Password['value']
                 })
                 .then((data: any)=> {
                         console.log(data);
-                        this.authService.setIsLoggedIn(data['token']);
+                        this.AuthService.setIsLoggedIn(data['token']);
                         window.location.pathname = '/'
                     
                 }).catch(err => {

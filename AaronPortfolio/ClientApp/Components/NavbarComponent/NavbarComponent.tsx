@@ -5,7 +5,7 @@ import { Link, NavLink } from 'react-router-dom';
 import AuthService from '../../services/authService';
 
 export class NavbarComponent extends React.Component {
-    private authService:AuthService = new AuthService();
+    private AuthService:AuthService = new AuthService();
     constructor(props: any){
         super(props);
         this.isUserLoggedIn = this.isUserLoggedIn.bind(this);
@@ -13,17 +13,17 @@ export class NavbarComponent extends React.Component {
     }
 
     isUserLoggedIn(){
-        return this.authService.getIsLoggedIn();
+        return this.AuthService.getIsLoggedIn();
     };
     logout = () => {
-        this.authService.logout();
+        this.AuthService.logout();
     }
 
     render() {
         return( 
-            <Navbar className="menubar">
+            <div className="menubar">
                 <div className="menubar-content">
-                    <nav className="navbar navbar-default navbar-default-home navbar-fixed-top navbar-default-first">
+                    <Navbar className="navbar navbar-default navbar-default-home navbar-fixed-top navbar-default-first">
                         <div className="container">
                             <div className="row">
                                 <div className="col-md-2 col-sm-2">
@@ -71,9 +71,9 @@ export class NavbarComponent extends React.Component {
                                 </div>{/*<!-- end col-md-8 -->*/}
                             </div>{/*<!-- end row -->*/}
                         </div>{/*<!-- end container-fluid -->*/}
-                    </nav>{/*<!-- navbar -->*/}
+                    </Navbar>{/*<!-- navbar -->*/}
                 </div>{/*<!-- end menubar-content -->*/}
-            </Navbar>
+            </div>
         )
     }
 }

@@ -81,7 +81,7 @@ export class RegistrationFormComponent extends React.Component{
                              </div>
                              <div className="spacer"></div>
                              <div className="form-group checkbox-field">
-                               <label for="check_box" className="text-small">
+                               <label className="text-small">
                                  <input type="checkbox" id="check_box" />
                                  <span className="ion-ios-checkmark-empty22 custom-check"></span> By clicking on sign up, you agree to <a href="javascript:;"><i>terms</i></a> and <a href="javascript:;"><i>privacy policy</i></a></label>
                              </div>

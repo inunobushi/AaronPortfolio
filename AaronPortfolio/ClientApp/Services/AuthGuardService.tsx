@@ -3,10 +3,10 @@
 
 
 export default class AuthGuard {
-    private authService:AuthService = new AuthService();
+    private AuthService:AuthService = new AuthService();
 
     
     get isUserLoggedIn(){
-        return this.authService.getIsLoggedIn();
+        return this.AuthService.getIsLoggedIn();
     }
 }
