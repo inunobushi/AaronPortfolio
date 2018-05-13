@@ -1,6 +1,8 @@
 import * as React from 'react';
 import Particles from 'react-particles-js';
 
+import {NavbarComponent} from '../NavbarComponent/NavbarComponent';
+
 import { Link, NavLink } from 'react-router-dom';
 
 
@@ -11,9 +13,11 @@ export class HomeComponent extends React.Component{
     }
 
     render() {
-        return( 
-            <div className="main-page-content main-page">
-                <div id="home">
+        return(
+            <div>
+                <NavbarComponent />
+                <div className="main-page-content main-page">
+                    <div id="home">
                         <div className="home-content-main">
                             <div className="table-cell">
                                 <div className="container">
@@ -25,7 +29,7 @@ export class HomeComponent extends React.Component{
                                                     <span className="cd-words-wrapper" style={{ width: 266 + 'px', overflow: 'hidden' }}>
                                                         <b className="is-hidden">Creative</b>
                                                         <b className="is-hidden">Honest</b>
-                                                        <b className="is-visible">John Doe</b>
+                                                        <b className="is-visible">Aaron Fairweather</b>
                                                     </span>
                                                 </h1>
                                                 <Link className="about-contact1" to="/Contact">Contact Me</Link>
@@ -35,7 +39,8 @@ export class HomeComponent extends React.Component{
                                 </div>{/*<!-- end container -->*/}
                             </div>{/*!-- end table-cell -->*/}
                         </div>{/*<!-- end home-content-main  -->*/}
-                </div>{/*<!-- end home  -->*/}
+                    </div>{/*<!-- end home  -->*/}
+                </div>
             </div>
 
         )
