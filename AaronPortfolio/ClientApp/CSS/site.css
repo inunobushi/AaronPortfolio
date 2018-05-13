@@ -10,6 +10,13 @@
     color: white;
 }
 
+.react-app{
+    height: 100vh;
+}
+.app{
+    height: 100vh;
+}
+
 /* Keep the nav menu independent of scrolling and on top of other items */
 .main-nav {
     position: fixed;
