@@ -4,6 +4,7 @@ import axios from 'axios';
 import {NavbarComponent} from '../NavbarComponent/NavbarComponent';
 import AuthService from '../../Services/AuthService';
 import { LoginModel }from '../../Models/login.model';
+import { CopyRightComponent } from '../CopyrightComponent/CopyrightComponent';
 
 export class LoginComponent extends React.Component{
 
@@ -77,6 +78,7 @@ export class LoginComponent extends React.Component{
                             </div>
                         </div>
                     </div>
+                    <CopyRightComponent/>
                 </div> 
             )
         }
