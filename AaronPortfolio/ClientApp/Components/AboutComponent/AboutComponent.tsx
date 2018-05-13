@@ -299,11 +299,10 @@ export class AboutComponent extends React.Component{
                                     </div>{/*<!-- end row  -->*/}
                                 </div>{/*<!-- end container  -->*/}
                             </div>{/*<!-- end service-grid  -->*/}
-                            {/*!-- end service-content  -->*/}
-                        </div>{/*<!-- end service  -->*/}
-                    </div>
-                </div>
-                <CopyRightComponent />
+                        </div>{/*<!-- end service-content  -->*/}
+                        <CopyRightComponent/>{/*<!-- end copyright-details -->*/}
+                    </div>{/*<!-- end service  -->*/}
+                </div>{/*<!-- end main-page -->*/}
             </div>
 
         )
