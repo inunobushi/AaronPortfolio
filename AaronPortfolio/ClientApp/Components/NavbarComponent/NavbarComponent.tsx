@@ -23,7 +23,7 @@ export class NavbarComponent extends React.Component {
         return( 
             <div className="menubar">
                 <div className="menubar-content">
-                    <Navbar className="navbar navbar-default navbar-default-home navbar-fixed-top navbar-default-first">
+                    <Navbar className="navbar navbar-default navbar-default-home navbar-static-top navbar-default-first">
                         <div className="container">
                             <div className="row">
                                 <div className="col-md-2 col-sm-2">
@@ -43,7 +43,7 @@ export class NavbarComponent extends React.Component {
                                     <Navbar.Collapse className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                         <Nav className="nav navbar-nav ">
                                             <li>
-                                                <NavLink to="/" className="active">Home</NavLink>
+                                                <NavLink to="/">Home</NavLink>
                                             </li>
                                             <li>
                                                 <NavLink to="/Work">Work</NavLink>
