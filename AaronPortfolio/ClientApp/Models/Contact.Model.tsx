@@ -1,4 +1,4 @@
-﻿export class ContactModel {
+﻿export class IContactModel {
     FirstName: string;
     LastName: string;
     Email: string;
