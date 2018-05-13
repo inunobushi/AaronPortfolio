@@ -1,4 +1,4 @@
-export class RegistrationModel {
+export class IRegistrationModel {
     Username: string;
     FirstName: string;
     LastName: string;
