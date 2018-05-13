@@ -3,7 +3,7 @@ import {Link, Redirect} from 'react-router-dom';
 import axios from 'axios';
 import {NavbarComponent} from '../NavbarComponent/NavbarComponent';
 import AuthService from '../../Services/AuthService';
-import { LoginModel }from '../../Models/login.model';
+import { ILoginModel }from '../../Models/login.model';
 import { CopyRightComponent } from '../CopyrightComponent/CopyrightComponent';
 
 export class LoginComponent extends React.Component{
@@ -13,7 +13,7 @@ export class LoginComponent extends React.Component{
                 
             }
             private AuthService: AuthService = new AuthService();
-            user:LoginModel = new LoginModel();
+            user:ILoginModel = new ILoginModel();
 
             loginUser = (e:any) =>{
                 e.preventDefault();
@@ -33,7 +33,7 @@ export class LoginComponent extends React.Component{
 
     render(){
             return(
-                <div>
+                <div className="app">
                     <NavbarComponent />
                     <div id="login" className="ptb ptb-xs-40 page-signin">
                         <div className="container">
