@@ -40,7 +40,8 @@ export class RegistrationFormComponent extends React.Component{
                       <div className="card bg-white">
                         <div className="card-content">
                           <section className="logo text-center">
-                            <h2>Register</h2>
+                            <h2 className="title-header">Register</h2>
+                            <div className="underline1"></div>
                           </section>
                           <div className="row about-row">
                             <div className="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 contact-col ">
@@ -48,37 +49,32 @@ export class RegistrationFormComponent extends React.Component{
                                 <fieldset>
                                   <div className="form-group">
                                     <div className="ui-input-group">
-                                      <input type="text" value={this.user.FirstName} required className="form-control" />
+                                      <input type="text" value={this.user.FirstName} className="form-control" placeholder="First Name" required/>
                                       <span className="input-bar"></span>
-                                      <label>First Name</label>
                                     </div>
                                   </div>
                                   <div className="form-group">
                                     <div className="ui-input-group">
-                                      <input type="text" value={this.user.LastName} required className="form-control" />
+                                      <input type="text" value={this.user.LastName} className="form-control" placeholder="Last Name" required/>
                                       <span className="input-bar"></span>
-                                      <label>Last Name</label>
                                     </div>
                                   </div>
                                   <div className="form-group">
                                     <div className="ui-input-group">
-                                      <input type="text" value={this.user.Email} required className="form-control" />
+                                      <input type="text" value={this.user.Email} className="form-control email" placeholder="Email" required/>
                                       <span className="input-bar"></span>
-                                      <label>Your email</label>
                                     </div>
                                   </div>
                                   <div className="form-group">
                                     <div className="ui-input-group">
-                                      <input type="text" value={this.user.Password} required className="form-control" />
+                                      <input type="text" value={this.user.Password} className="form-control" placeholder="Password" required/>
                                       <span className="input-bar"></span>
-                                      <label>Your password </label>
                                     </div>
                                   </div>
                                   <div className="form-group">
                                     <div className="ui-input-group">
-                                      <input type="text" value={this.user.Password_confirm} required className="form-control" />
+                                      <input type="text" value={this.user.Password_confirm} className="form-control" placeholder="Password Confirmation" required/>
                                       <span className="input-bar"></span>
-                                      <label>Please confirm your password </label>
                                     </div>
                                   </div>
                                   <div className="spacer"></div>

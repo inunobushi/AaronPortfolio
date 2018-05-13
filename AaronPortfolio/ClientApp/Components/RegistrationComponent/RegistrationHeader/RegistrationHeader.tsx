@@ -7,7 +7,7 @@ export class RegistrationHeaderComponent extends React.Component{
              <div className="container">
                <div className="row title">
                  <div className="title_row">
-                   <h1 data-title="Register"><span>Register</span></h1>
+                   
                  </div> 
                </div>
              </div>
