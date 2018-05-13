@@ -19,14 +19,7 @@ export const App = (props:any) => {
         return (
         <BrowserRouter basename={ baseUrl }>
             <div className="app">
-               {
-                (width < 768) && <NavMenuComponent/>
-                }
-
-                {
-                (width > 768) && <NavbarComponent/>
-                } 
-                
+                 
                 <Switch>
                     <Route exact path="/" render={()=> <HomeComponent/>}/>
                     <Route path="/About" render={()=> <AboutComponent/>}/>
