@@ -3,14 +3,14 @@ import axios from 'axios';
 
 import {NavbarComponent} from '../NavbarComponent/NavbarComponent';
 import {CopyRightComponent} from '../CopyrightComponent/CopyrightComponent';
-import {ContactModel} from '../../Models/Contact.Model';
+import {IContactModel} from '../../Models/Contact.Model';
 
 export class ContactComponent extends React.Component{
 
     constructor(props:any){
         super(props);
     }
-    contactForm:ContactModel = new ContactModel();
+    contactForm:IContactModel = new IContactModel();
 
     contactSubmit = (e:any) => {
 
@@ -32,7 +32,7 @@ export class ContactComponent extends React.Component{
 
     render() {
         return(
-            <div>
+            <div className="app">
                 <NavbarComponent />
                 <div className="main-page-content">
 
