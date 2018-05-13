@@ -46,7 +46,7 @@ export class WorkComponent extends React.Component{
                                                             </div>{/*<!-- end table-cell  -->*/}
                                                         </div>{/*<!-- end overlay-main  -->*/}
                                                     </div>{/*<!-- end overlay  -->*/}
-                                                    <img src="../../Images/Lamisa/portfolios/graphics/1.jpg" alt="" />
+                                                    <img src="http://res.cloudinary.com/dx6rmphew/image/upload/v1526243451/development1.jpg" alt="" />
                                                 </div>{/*<!-- end portfolio-wrapper  -->*/}
                                             </div>{/*<!-- end portfolio-graphics  -->*/}
                                             <div className="portfolio web" data-cat="web">
@@ -207,10 +207,10 @@ export class WorkComponent extends React.Component{
                                     </div>{/*<!-- container -->*/}
                                 </div>{/*<!-- end work-details  -->*/}
                             </div>{/*<!-- end work-grid  -->*/}
-                            <CopyRightComponent />{/*<!-- end copyright-details -->*/}
                         </div>{/*<!-- end work-content  -->*/}
                     </div>{/*<!-- end work  -->*/}
                 </div>
+                <CopyRightComponent />{/*<!-- end copyright-details -->*/}
             </div>
 
         )
