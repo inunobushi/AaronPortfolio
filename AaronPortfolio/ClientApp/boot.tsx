@@ -1,5 +1,6 @@
 import 'bootstrap';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
+import './CSS/site.css';
 import './CSS/color.css';
 import './CSS/lamisa-animate.css';
 import './CSS/lamisa-animate-header.css';
