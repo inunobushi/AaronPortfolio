@@ -1,10 +1,8 @@
 import 'bootstrap';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import './CSS/reva-default-color.css';
-import './CSS/reva-main.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
+import './CSS/color.css';
 import './CSS/lamisa-animate.css';
 import './CSS/lamisa-animate-header.css';
-import './CSS/lamisa-default.css';
 import './CSS/lasima-jquerysctipttop.css';
 import './CSS/_flaticon.less';
 
