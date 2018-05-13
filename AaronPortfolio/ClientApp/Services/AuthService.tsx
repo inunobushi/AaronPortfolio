@@ -1,5 +1,5 @@
 ﻿import axios from 'axios';
-import {LoginModel} from '../Models/Login.Model';
+import {ILoginModel} from '../Models/Login.Model';
 
 interface AuthServiceProps {
     isLoggedIn: boolean;
@@ -25,7 +25,7 @@ export default class AuthService {
             return this.isLoggedIn
         }
 
-        login(user:LoginModel){
+        login(user:ILoginModel){
             return axios.post('/users/login', user)
         }
 
