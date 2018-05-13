@@ -17,6 +17,17 @@
     height: 100vh;
 }
 
+.title-header {
+    color: #e9c139;
+    font-size: 35px;
+    font-family: 'Lato', sans-serif;
+}
+
+.copyright h3 > a{
+    color: black;
+    text-decoration: none;
+}
+
 /* Keep the nav menu independent of scrolling and on top of other items */
 .main-nav {
     position: fixed;
