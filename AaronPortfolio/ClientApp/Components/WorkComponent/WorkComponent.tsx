@@ -5,7 +5,7 @@ import {NavbarComponent} from '../NavbarComponent/NavbarComponent';
 export class WorkComponent extends React.Component{
     render() {
         return(
-            <div>
+            <div className="app">
                 <NavbarComponent />
                 <div className="main-page-content">
 

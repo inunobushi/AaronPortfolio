@@ -12,7 +12,7 @@ export class AboutComponent extends React.Component{
 
     render() {
         return( 
-            <div>
+            <div className="app">
                 <NavbarComponent />
                 <div className="main-page-content">
 
@@ -299,10 +299,11 @@ export class AboutComponent extends React.Component{
                                     </div>{/*<!-- end row  -->*/}
                                 </div>{/*<!-- end container  -->*/}
                             </div>{/*<!-- end service-grid  -->*/}
-                            <CopyRightComponent />{/*!-- end service-content  -->*/}
+                            {/*!-- end service-content  -->*/}
                         </div>{/*<!-- end service  -->*/}
                     </div>
                 </div>
+                <CopyRightComponent />
             </div>
 
         )
