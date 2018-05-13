@@ -18,7 +18,6 @@ export const App = (props:any) => {
         const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href')!;
         return (
         <BrowserRouter basename={ baseUrl }>
-            <div className="app">
                  
                 <Switch>
                     <Route exact path="/" render={()=> <HomeComponent/>}/>
@@ -30,7 +29,6 @@ export const App = (props:any) => {
                     <Route path="/Registration" render={()=><RegistrationComponent/>}/>
                     <Route path="/Contact" render={()=> <ContactComponent/>}/>
                 </Switch>
-            </div>
         </BrowserRouter>
         )
 }
