@@ -5,6 +5,7 @@ import './CSS/lamisa-animate.css';
 import './CSS/lamisa-animate-header.css';
 import './CSS/lasima-jquerysctipttop.css';
 import './CSS/_flaticon.less';
+import './CSS/font-awesome.less';
 
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
