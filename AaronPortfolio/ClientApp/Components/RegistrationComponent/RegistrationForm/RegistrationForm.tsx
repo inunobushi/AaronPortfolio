@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import axios from 'axios';
-import { RegistrationModel } from '../../../Models/Registration.Model';
+import { IRegistrationModel } from '../../../Models/Registration.Model';
 
 
 export class RegistrationFormComponent extends React.Component{
@@ -11,7 +11,7 @@ export class RegistrationFormComponent extends React.Component{
         this.register = this.register.bind(this);
     }
 
-   user:RegistrationModel = new RegistrationModel();
+   user:IRegistrationModel = new IRegistrationModel();
 
     register(e:any){
         console.log(e);
