@@ -8,10 +8,6 @@ export class RegistrationHeaderComponent extends React.Component{
                <div className="row title">
                  <div className="title_row">
                    <h1 data-title="Register"><span>Register</span></h1>
-                   <div className="page-breadcrumb">
-                       <a>Home</a>/ <span>Register</span>
-                     </div>
-                   
                  </div> 
                </div>
              </div>
