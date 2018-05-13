@@ -18,7 +18,8 @@ export class CopyRightComponent extends React.Component{
                             <li className="wow fadeIn" data-wow-delay="1.2s"><a href="www.instagram.com" target="newtab"><i className="fa fa-instagram" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>{/*<!-- end about-social-icon -->*/}
-                    <h3>copyright and design: tamzid hossain</h3>
+                    <h3>© 2018 Ethan Burrow Fairweather aka 犬の大将</h3>
+                    <h5>Design inspired by: Tamzid Hossain</h5>
                 </div>{/*<!-- end copyright -->*/}
             </div>
         )
