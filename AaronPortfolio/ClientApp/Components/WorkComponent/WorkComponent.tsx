@@ -42,11 +42,11 @@ export class WorkComponent extends React.Component{
                                                         <div className="overlay-main">
                                                             <div className="table-cell">
                                                                 <h3>Project details</h3>
-                                                                <a className="fancybox" href="img/portfolios/graphics/1.jpg" title="little something about the image"><i className="fa fa-search work-icon" aria-hidden="true"></i></a>
+                                                                <a className="fancybox" href="../../Images/Lamisa/portfolios/graphics/1.jpg" title="little something about the image"><i className="fa fa-search work-icon" aria-hidden="true"></i></a>
                                                             </div>{/*<!-- end table-cell  -->*/}
                                                         </div>{/*<!-- end overlay-main  -->*/}
                                                     </div>{/*<!-- end overlay  -->*/}
-                                                    <img src="img/portfolios/graphics/1.jpg" alt="" />
+                                                    <img src="../../Images/Lamisa/portfolios/graphics/1.jpg" alt="" />
                                                 </div>{/*<!-- end portfolio-wrapper  -->*/}
                                             </div>{/*<!-- end portfolio-graphics  -->*/}
                                             <div className="portfolio web" data-cat="web">
@@ -56,11 +56,11 @@ export class WorkComponent extends React.Component{
                                                         <div className="overlay-main">
                                                             <div className="table-cell">
                                                                 <h3>Project details</h3>
-                                                                <a className="fancybox" href="img/portfolios/web/1.jpg" title="little something about the image"><i className="fa fa-search work-icon" aria-hidden="true"></i></a>
+                                                                <a className="fancybox" href="../../Images/Lamisa/portfolios/web/1.jpg" title="little something about the image"><i className="fa fa-search work-icon" aria-hidden="true"></i></a>
                                                             </div>{/*<!-- end table-cell  -->*/}
                                                         </div>{/*<!-- end overlay-main  -->*/}
                                                     </div>{/*<!-- end overlay  -->*/}
-                                                    <img src="img/portfolios/web/1.jpg" alt="" />
+                                                    <img src="../../Images/Lamisa/portfolios/web/1.jpg" alt="" />
                                                 </div>{/*<!-- end portfolio-wrapper  -->*/}
                                             </div>{/*<!-- end portfolio-web  -->*/}
                                             <div className="portfolio development" data-cat="development">
@@ -70,11 +70,11 @@ export class WorkComponent extends React.Component{
                                                         <div className="overlay-main">
                                                             <div className="table-cell">
                                                                 <h3>Project details</h3>
-                                                                <a className="fancybox" href="img/portfolios/development/1.jpg" title="little something about the image"><i className="fa fa-search work-icon" aria-hidden="true"></i></a>
+                                                                <a className="fancybox" href="../../Images/Lamisa/portfolios/development/1.jpg" title="little something about the image"><i className="fa fa-search work-icon" aria-hidden="true"></i></a>
                                                             </div>{/*<!-- end table-cell  -->*/}
                                                         </div>{/*<!-- end overlay-main  -->*/}
                                                     </div>{/*<!-- end overlay  -->*/}
-                                                    <img src="img/portfolios/development/1.jpg" alt="" />
+                                                    <img src="../../Images/Lamisa/portfolios/development/1.jpg" alt="" />
                                                 </div>{/*<!-- end portfolio-wrapper  -->*/}
                                             </div>{/*<!-- end portfolio-development  -->*/}
                                             <div className="portfolio graphics" data-cat="graphics">
@@ -84,11 +84,11 @@ export class WorkComponent extends React.Component{
                                                         <div className="overlay-main">
                                                             <div className="table-cell">
                                                                 <h3>Project details</h3>
-                                                                <a className="fancybox" href="img/portfolios/graphics/2.jpg" title="little something about the image"><i className="fa fa-search work-icon" aria-hidden="true"></i></a>
+                                                                <a className="fancybox" href="../../Images/Lamisa/portfolios/graphics/2.jpg" title="little something about the image"><i className="fa fa-search work-icon" aria-hidden="true"></i></a>
                                                             </div>{/*<!-- end table-cell  -->*/}
                                                         </div>{/*<!-- end overlay-main  -->*/}
                                                     </div>{/*<!-- end overlay  -->*/}
-                                                    <img src="img/portfolios/graphics/2.jpg" alt="" />
+                                                    <img src="../../Images/Lamisa/portfolios/graphics/2.jpg" alt="" />
                                                 </div>{/*<!-- end portfolio-wrapper  -->*/}
                                             </div>{/*<!-- end portfolio-graphics  -->*/}
                                             <div className="portfolio development" data-cat="development">
@@ -98,11 +98,11 @@ export class WorkComponent extends React.Component{
                                                         <div className="overlay-main">
                                                             <div className="table-cell">
                                                                 <h3>Project details</h3>
-                                                                <a className="fancybox" href="img/portfolios/development/2.jpg" title="little something about the image"><i className="fa fa-search work-icon" aria-hidden="true"></i></a>
+                                                                <a className="fancybox" href="../../Images/Lamisa/portfolios/development/2.jpg" title="little something about the image"><i className="fa fa-search work-icon" aria-hidden="true"></i></a>
                                                             </div>{/*<!-- end table-cell  -->*/}
                                                         </div>{/*<!-- end overlay-main  -->*/}
                                                     </div>{/*<!-- end overlay  -->*/}
-                                                    <img src="img/portfolios/development/2.jpg" alt="" />
+                                                    <img src="../../Images/Lamisa/portfolios/development/2.jpg" alt="" />
                                                 </div>{/*<!-- end portfolio-wrapper  -->*/}
                                             </div>{/*<!-- end portfolio-development  -->*/}
                                             <div className="portfolio web" data-cat="web">
@@ -112,11 +112,11 @@ export class WorkComponent extends React.Component{
                                                         <div className="overlay-main">
                                                             <div className="table-cell">
                                                                 <h3>Project details</h3>
-                                                                <a className="fancybox" href="img/portfolios/web/2.jpg" title="little something about the image"><i className="fa fa-search work-icon" aria-hidden="true"></i></a>
+                                                                <a className="fancybox" href="../../Images/Lamisa/portfolios/web/2.jpg" title="little something about the image"><i className="fa fa-search work-icon" aria-hidden="true"></i></a>
                                                             </div>{/*<!-- end table-cell  -->*/}
                                                         </div>{/*<!-- end overlay-main  -->*/}
                                                     </div>{/*<!-- end overlay  -->*/}
-                                                    <img src="img/portfolios/web/2.jpg" alt="" />
+                                                    <img src="../../Images/Lamisa/portfolios/web/2.jpg" alt="" />
                                                 </div>{/*<!-- end portfolio-wrapper  -->*/}
                                             </div>{/*<!-- end portfolio-web  -->*/}
                                             <div className="portfolio graphics" data-cat="graphics">
@@ -126,11 +126,11 @@ export class WorkComponent extends React.Component{
                                                         <div className="overlay-main">
                                                             <div className="table-cell">
                                                                 <h3>Project details</h3>
-                                                                <a className="fancybox" href="img/portfolios/graphics/3.jpg" title="little something about the image"><i className="fa fa-search work-icon" aria-hidden="true"></i></a>
+                                                                <a className="fancybox" href="../../Images/Lamisa/portfolios/graphics/3.jpg" title="little something about the image"><i className="fa fa-search work-icon" aria-hidden="true"></i></a>
                                                             </div>{/*<!-- end table-cell  -->*/}
                                                         </div>{/*<!-- end overlay-main  -->*/}
                                                     </div>{/*<!-- end overlay  -->*/}
-                                                    <img src="img/portfolios/graphics/3.jpg" alt="" />
+                                                    <img src="../../Images/Lamisa/portfolios/graphics/3.jpg" alt="" />
                                                 </div>{/*<!-- end portfolio-wrapper  -->*/}
                                             </div>{/*<!-- end portfolio-graphics  -->*/}
                                             <div className="portfolio development" data-cat="development">
@@ -140,11 +140,11 @@ export class WorkComponent extends React.Component{
                                                         <div className="overlay-main">
                                                             <div className="table-cell">
                                                                 <h3>Project details</h3>
-                                                                <a className="fancybox" href="img/portfolios/development/3.jpg" title="little something about the image"><i className="fa fa-search work-icon" aria-hidden="true"></i></a>
+                                                                <a className="fancybox" href="../../Images/Lamisa/portfolios/development/3.jpg" title="little something about the image"><i className="fa fa-search work-icon" aria-hidden="true"></i></a>
                                                             </div>{/*<!-- end table-cell  -->*/}
                                                         </div>{/*<!-- end overlay-main  -->*/}
                                                     </div>{/*<!-- end overlay  -->*/}
-                                                    <img src="img/portfolios/development/3.jpg" alt="" />
+                                                    <img src="../../Images/Lamisa/portfolios/development/3.jpg" alt="" />
                                                 </div>{/*<!-- end portfolio-wrapper  -->*/}
                                             </div>{/*<!-- end portfolio-development  -->*/}
                                             <div className="portfolio photography" data-cat="photography">
@@ -154,11 +154,11 @@ export class WorkComponent extends React.Component{
                                                         <div className="overlay-main">
                                                             <div className="table-cell">
                                                                 <h3>Project details</h3>
-                                                                <a className="fancybox" href="img/portfolios/photography/1.jpg" title="little something about the image"><i className="fa fa-search work-icon" aria-hidden="true"></i></a>
+                                                                <a className="fancybox" href="../../Images/Lamisa/portfolios/photography/1.jpg" title="little something about the image"><i className="fa fa-search work-icon" aria-hidden="true"></i></a>
                                                             </div>{/*<!-- end table-cell  -->*/}
                                                         </div>{/*<!-- end overlay-main  -->*/}
                                                     </div>{/*<!-- end overlay  -->*/}
-                                                    <img src="img/portfolios/photography/1.jpg" alt="" />
+                                                    <img src="../../Images/Lamisa/portfolios/photography/1.jpg" alt="" />
                                                 </div>{/*<!-- end portfolio-wrapper  -->*/}
                                             </div>{/*<!-- end portfolio-photo  -->*/}
                                             <div className="portfolio web" data-cat="web">
@@ -168,11 +168,11 @@ export class WorkComponent extends React.Component{
                                                         <div className="overlay-main">
                                                             <div className="table-cell">
                                                                 <h3>Project details</h3>
-                                                                <a className="fancybox" href="img/portfolios/web/3.jpg" title="little something about the image"><i className="fa fa-search work-icon" aria-hidden="true"></i></a>
+                                                                <a className="fancybox" href="../../Images/Lamisa/portfolios/web/3.jpg" title="little something about the image"><i className="fa fa-search work-icon" aria-hidden="true"></i></a>
                                                             </div>{/*<!-- end table-cell  -->*/}
                                                         </div>{/*<!-- end overlay-main  -->*/}
                                                     </div>{/*<!-- end overlay  -->*/}
-                                                    <img src="img/portfolios/web/3.jpg" alt="" />
+                                                    <img src="../../Images/Lamisa/portfolios/web/3.jpg" alt="" />
                                                 </div>{/*<!-- end portfolio-wrapper  -->*/}
                                             </div>{/*<!-- end portfolio-web  -->*/}
                                             <div className="portfolio photography" data-cat="photography">
@@ -182,11 +182,11 @@ export class WorkComponent extends React.Component{
                                                         <div className="overlay-main">
                                                             <div className="table-cell">
                                                                 <h3>Project details</h3>
-                                                                <a className="fancybox" href="img/portfolios/photography/2.jpg" title="little something about the image"><i className="fa fa-search work-icon" aria-hidden="true"></i></a>
+                                                                <a className="fancybox" href="../../Images/Lamisa/portfolios/photography/2.jpg" title="little something about the image"><i className="fa fa-search work-icon" aria-hidden="true"></i></a>
                                                             </div>{/*<!-- end table-cell  -->*/}
                                                         </div>{/*<!-- end overlay-main  -->*/}
                                                     </div>{/*<!-- end overlay  -->*/}
-                                                    <img src="img/portfolios/photography/2.jpg" alt="" />
+                                                    <img src="../../Images/Lamisa/portfolios/photography/2.jpg" alt="" />
                                                 </div>{/*<!-- end portfolio-wrapper  -->*/}
                                             </div>{/*<!-- end portfolio-photo  -->*/}
                                             <div className="portfolio photography" data-cat="photography">
@@ -196,11 +196,11 @@ export class WorkComponent extends React.Component{
                                                         <div className="overlay-main">
                                                             <div className="table-cell">
                                                                 <h3>Project details</h3>
-                                                                <a className="fancybox" href="img/portfolios/photography/3.jpg" title="little something about the image"><i className="fa fa-search work-icon" aria-hidden="true"></i></a>
+                                                                <a className="fancybox" href="../../Images/Lamisa/portfolios/photography/3.jpg" title="little something about the image"><i className="fa fa-search work-icon" aria-hidden="true"></i></a>
                                                             </div>{/*<!-- end table-cell  -->*/}
                                                         </div>{/*<!-- end overlay-main  -->*/}
                                                     </div>{/*<!-- end overlay  -->*/}
-                                                    <img src="img/portfolios/photography/3.jpg" alt="" />
+                                                    <img src="../../Images/Lamisa/portfolios/photography/3.jpg" alt="" />
                                                 </div>{/*<!-- end portfolio-wrapper  -->*/}
                                             </div>{/*<!-- end portfolio-photo  -->*/}
                                         </div>{/*<!-- end portfoliolist  -->*/}
