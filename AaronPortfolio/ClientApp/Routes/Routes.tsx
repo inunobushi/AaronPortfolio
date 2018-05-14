@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BrowserRouter, Route,  Switch } from 'react-router-dom';
+import { BrowserRouter, Route,  Switch, HashRouter } from 'react-router-dom';
 import * as ReactDOM from 'react-dom';
 import { HomeComponent } from '../Components/HomeComponent/HomeComponent';
 import { AboutComponent } from '../Components/AboutComponent/AboutComponent';
@@ -17,6 +17,7 @@ export const App = (props:any) => {
         const width = window.innerWidth;
         const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href')!;
         return (
+
         <BrowserRouter basename={ baseUrl }>
                  
                 <Switch>

@@ -11,7 +11,7 @@ import './CSS/font-awesome.less';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 import App from './Routes/Routes';
  
 
@@ -22,7 +22,7 @@ function renderApp() {
     // configuration and injects the app into a DOM element.
     ReactDOM.render(
         <AppContainer>
-                <App/>
+            <App/>
         </AppContainer>,
         document.getElementById('react-app')
     );
