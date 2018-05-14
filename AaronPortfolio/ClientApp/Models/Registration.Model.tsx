@@ -4,5 +4,4 @@ export class IRegistrationModel {
     LastName: string;
     Email:string;
     Password:string;
-    Password_confirm: string;
 }
