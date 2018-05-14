@@ -13,10 +13,33 @@ export class RegistrationFormComponent extends React.Component{
 
    user:IRegistrationModel = new IRegistrationModel();
 
+   isValid:boolean = false;
+
+
+   confirmPassword(e: any) {
+     console.log(e);
+     
+    console.log("Password: ", this.user.Password);
+}
+
+
     register(e:any){
         console.log(e);
         e.preventDefault();
-        axios.post('/users/register', this.user ).then( res => {
+        console.log("logging the user", this.register);
+
+        axios.post('api/account/register/', this.user, {headers:{'Content-Type':'application/json'}} ).then( res => {
+          if(res.status === 200) {
+              console.log(res);
+          } else {
+              console.log(res);
+          }
+      }).catch(err => {
+          console.log(err);
+          console.log('not logging in');
+      })
+        
+        {/*axios.post('/api/register', this.user, {headers:{'Content-Type':'application/json'}} ).then( res => {
             if(res.status === 200) {
                 console.log(res);
             } else {
@@ -25,7 +48,7 @@ export class RegistrationFormComponent extends React.Component{
         }).catch(err => {
             console.log(err);
             console.log('not logging in');
-        })
+        })*/}
     } 
 
 
@@ -73,7 +96,7 @@ export class RegistrationFormComponent extends React.Component{
                                   </div>
                                   <div className="form-group">
                                     <div className="ui-input-group">
-                                      <input type="text" value={this.user.Password_confirm} className="form-control" placeholder="Password Confirmation" required/>
+                                      {/*<input type="text" className="form-control" placeholder="Password Confirmation"  onChange={this.confirmPassword.bind(this)} required/>*/}
                                       <span className="input-bar"></span>
                                     </div>
                                   </div>
