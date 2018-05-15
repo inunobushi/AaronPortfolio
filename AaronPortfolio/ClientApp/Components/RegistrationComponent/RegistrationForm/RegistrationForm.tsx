@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {} from 'redux';
 
 import axios from 'axios';
 import { IRegistrationModel } from '../../../Models/Registration.Model';
@@ -38,17 +39,6 @@ export class RegistrationFormComponent extends React.Component{
           console.log(err);
           console.log('not logging in');
       })
-        
-        {/*axios.post('/api/register', this.user, {headers:{'Content-Type':'application/json'}} ).then( res => {
-            if(res.status === 200) {
-                console.log(res);
-            } else {
-                console.log(res);
-            }
-        }).catch(err => {
-            console.log(err);
-            console.log('not logging in');
-        })*/}
     } 
 
 
