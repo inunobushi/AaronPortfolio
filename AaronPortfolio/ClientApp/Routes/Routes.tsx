@@ -9,7 +9,6 @@ import { ScheduleComponent } from '../Components/ScheduleComponent/ScheduleCompo
 import { ContactComponent } from '../Components/ContactComponent/ContactComponent';
 import { RegistrationComponent } from '../Components/RegistrationComponent/RegistrationComponent';
 import { NavMenuComponent } from '../Components/NavMenuComponent/NavMenuComponent';
-import { NavbarComponent } from '../Components/NavbarComponent/NavbarComponent';
 
 import PrivateRoute from '../Services/AnonymousRoute';
 
