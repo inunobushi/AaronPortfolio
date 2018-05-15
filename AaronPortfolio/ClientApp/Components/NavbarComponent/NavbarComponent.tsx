@@ -1,10 +1,11 @@
 ﻿import * as React from 'react';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
+import {connect} from 'react-redux';
 
 import AuthService from '../../services/authService';
 
-export class NavbarComponent extends React.Component {
+class NavbarComponent extends React.Component {
     private AuthService:AuthService = new AuthService();
     constructor(props: any){
         super(props);
@@ -18,8 +19,10 @@ export class NavbarComponent extends React.Component {
     logout = () => {
         this.AuthService.logout();
     }
+   
 
     render() {
+        console.log('props here', this.props)
         return( 
             <div className="menubar">
                 <div className="menubar-content">
@@ -77,3 +80,20 @@ export class NavbarComponent extends React.Component {
         )
     }
 }
+
+const mapStateToProps = (store) => {
+
+    return {
+        headerData: store.header,
+        authData: store.auth
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        updateHeaderText: (data) => dispatch({type: 'UPDATE_HEADER_TEXT', payload: data})
+
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavbarComponent);
