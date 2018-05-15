@@ -1,5 +1,5 @@
 ﻿import * as React from 'react';
-import {NavbarComponent} from '../NavbarComponent/NavbarComponent';
+import NavbarComponent from '../NavbarComponent/NavbarComponent';
 import {RegistrationFormComponent} from './RegistrationForm/RegistrationForm';
 import {RegistrationHeaderComponent} from './RegistrationHeader/RegistrationHeader';
 import { CopyRightComponent } from '../CopyrightComponent/CopyrightComponent';

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Particles from 'react-particles-js';
 
-import {NavbarComponent} from '../NavbarComponent/NavbarComponent';
+import NavbarComponent from '../NavbarComponent/NavbarComponent';
 
 import { Link, NavLink } from 'react-router-dom';
 

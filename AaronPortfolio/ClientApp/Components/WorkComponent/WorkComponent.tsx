@@ -1,6 +1,6 @@
 ﻿import * as React from 'react';
 import {CopyRightComponent} from '../CopyrightComponent/CopyrightComponent';
-import {NavbarComponent} from '../NavbarComponent/NavbarComponent';
+import NavbarComponent from '../NavbarComponent/NavbarComponent';
 
 export class WorkComponent extends React.Component{
     render() {

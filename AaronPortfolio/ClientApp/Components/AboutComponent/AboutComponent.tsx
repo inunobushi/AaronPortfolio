@@ -1,7 +1,7 @@
 ﻿import * as React from 'react';
 import { Link} from 'react-router-dom';
 
-import {NavbarComponent} from '../NavbarComponent/NavbarComponent';
+import NavbarComponent from '../NavbarComponent/NavbarComponent';
 import { CopyRightComponent } from '../CopyrightComponent/CopyrightComponent';
 
 export class AboutComponent extends React.Component{

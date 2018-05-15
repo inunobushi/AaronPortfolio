@@ -1,7 +1,7 @@
 ﻿import * as React from 'react';
 import axios from 'axios';
 
-import {NavbarComponent} from '../NavbarComponent/NavbarComponent';
+import NavbarComponent from '../NavbarComponent/NavbarComponent';
 import {CopyRightComponent} from '../CopyrightComponent/CopyrightComponent';
 import { ContactForm } from './ContactForm/ContactForm';
 import { ContactDirect } from './ContactDirect/ContactDirect';

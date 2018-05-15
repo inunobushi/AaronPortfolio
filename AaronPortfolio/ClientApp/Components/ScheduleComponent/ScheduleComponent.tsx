@@ -1,7 +1,7 @@
 ﻿import * as React from 'react';
 import BigCalendar from 'react-big-calendar'
 
-import {NavbarComponent} from '../NavbarComponent/NavbarComponent';
+import NavbarComponent from '../NavbarComponent/NavbarComponent';
 
 export class ScheduleComponent extends React.Component{
     render() {
