@@ -10,9 +10,11 @@ import './CSS/font-awesome.less';
 
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import {Provider} from 'react-redux';
 import { AppContainer } from 'react-hot-loader';
 import { BrowserRouter, HashRouter } from 'react-router-dom';
 import App from './Routes/Routes';
+import Store from './Store/store';
  
 
 
@@ -21,9 +23,11 @@ function renderApp() {
     // This code starts up the React app when it runs in a browser. It sets up the routing
     // configuration and injects the app into a DOM element.
     ReactDOM.render(
-        <AppContainer>
-            <App/>
-        </AppContainer>,
+        <Provider store={Store}>
+            <AppContainer>
+                <App/>
+            </AppContainer>
+        </Provider>,
         document.getElementById('react-app')
     );
 }
