@@ -9,3 +9,6 @@ export const REG_USER ="REG_USER";
 
 export const LOGIN_USER = "LOGIN_USER";
 export const UPDATE_FIELD_LOGIN = "UPDATE_FIELD_LOGIN";
+
+export const CONTACT_FORM = "CONTACT_FORM";
+export const UPDATE_FIELD_CONTACT = "UPDATE_FIELD_CONTACT";
