@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import NavbarComponent from '../NavbarComponent/NavbarComponent';
 import {CopyRightComponent} from '../CopyrightComponent/CopyrightComponent';
-import { ContactForm } from './ContactForm/ContactForm';
+import  ContactFormComponent from './ContactFormComponent/ContactFormComponent';
 import { ContactDirect } from './ContactDirect/ContactDirect';
 import { ContactHeader } from './ContactHeader/ContactHeader';
 
@@ -28,7 +28,7 @@ export class ContactComponent extends React.Component{
                                 <div className="contact-form-details wow fadeIn">
                                     <div className="container">
                                         <ContactHeader/>{/*<!-- end row  -->*/}
-                                        <ContactForm/>{/*<!-- end row -->*/ }
+                                        <ContactFormComponent/>{/*<!-- end row -->*/ }
                                         <ContactDirect/>{/*<!-- end row -->*/}
                                     </div>{/*<!-- end container -->*/}
                                     <div className="container-fluid map-con">
