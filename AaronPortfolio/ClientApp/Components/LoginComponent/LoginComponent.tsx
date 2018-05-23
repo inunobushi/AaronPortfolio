@@ -3,7 +3,7 @@ import {Link, Redirect} from 'react-router-dom';
 
 import NavbarComponent from '../NavbarComponent/NavbarComponent';
 import { CopyRightComponent } from '../CopyrightComponent/CopyrightComponent';
-import { LoginForm } from './LoginForm/LoginForm';
+import LoginFormComponent  from './LoginFormComponent/LoginFormComponent';
 
 export class LoginComponent extends React.Component{
 
@@ -28,7 +28,7 @@ export class LoginComponent extends React.Component{
                                                         <h2 className="title-header">Login</h2>
                                                         <div className="underline1"></div>
                                                     </section>
-                                                    <LoginForm/>
+                                                    <LoginFormComponent/>
                                                 </div>
                                             </div>
                                         </div>
