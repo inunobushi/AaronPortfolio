@@ -3,20 +3,13 @@ import { connect } from 'react-redux';
 
 import AuthAPI from '../../../API/AuthAPI';
 import { RegistrationModel } from '../../../Models/Registration.Model';
+import { IRegFields } from '../../../Interfaces/RegInterface';
 import { UPDATE_FIELD_AUTH, REG_USER } from '../../../Contants/Constants';
 
-interface IFields {
-  FirstName: string,
-  LastName: string,
-  Email: string,
-  Password: string,
-  PasswordConfirm: string,
-  updateFieldAuth: any,
-  submitForm: any
-}
 
 
-class RegistrationFormComponent extends React.Component<IFields, {}> {
+
+class RegistrationFormComponent extends React.Component<IRegFields, {}> {
 
   constructor(props: any) {
     super(props);
