@@ -1,5 +1,4 @@
-
-import { UPDATE_FIELD_AUTH } from '../Contants/Constants'
+import { LOGIN_USER, UPDATE_FIELD_AUTH } from '../Contants/Constants'
 
 const initialState = {
     currentUser: null
@@ -8,8 +7,8 @@ const initialState = {
 
 export default (state = initialState, action) => {
     switch(action.type) {
-        case UPDATE_FIELD_AUTH:
-            return {...state, [action.field]: action.payload}
+        case LOGIN_USER:
+            return { ...state, currentUser: action.payload.data}
         default: 
             return state
     }
