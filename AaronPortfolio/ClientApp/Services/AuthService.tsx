@@ -1,7 +1,7 @@
 ﻿import axios from 'axios';
 import {ILoginModel} from '../Models/Login.Model';
 
-interface AuthServiceProps {
+interface IAuthServiceProps {
     isLoggedIn: boolean;
 }
 
