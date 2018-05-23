@@ -71,7 +71,7 @@ const mapStateToProps = (store) => {
   
   const mapDispatchToProps = (dispatch) => ({
     updateFieldLogin: (event, field) => dispatch({ type: UPDATE_FIELD_LOGIN, field, payload: event.target.value }),
-    submitLogin: (user) => dispatch({ type: LOGIN_USER, payload: user }),
+    submitLogin: (loginForm) => dispatch({ type: LOGIN_USER, payload: loginForm }),
   })
 
   export default connect(mapStateToProps, mapDispatchToProps)(LoginFormComponent);
