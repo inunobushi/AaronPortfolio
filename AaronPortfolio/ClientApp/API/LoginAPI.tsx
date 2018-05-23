@@ -15,3 +15,5 @@ const Login = (e:any) =>{
         console.log('err');
     })
 }
+
+export default (Login);
