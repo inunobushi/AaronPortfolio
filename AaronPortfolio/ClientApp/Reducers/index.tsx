@@ -5,5 +5,5 @@ import LoginReducer from './LoginReducer';
 
 export default combineReducers({
     auth: AuthReducer,
-    
+    login: LoginReducer
 })
