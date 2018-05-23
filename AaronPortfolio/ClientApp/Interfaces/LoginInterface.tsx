@@ -4,6 +4,6 @@ export interface ILoginFields {
     Email: string,
     Password: string,
     PasswordConfirm: string,
-    updateFieldAuth: any,
+    updateFieldLogin: any,
     submitLogin: any
   }
