@@ -36,6 +36,8 @@
     "webpack-hot-middleware": "2.18.2"
   },
   "dependencies": {
+    "@fancyapps/fancybox": "^3.3.5",
+    "@types/fancybox": "^2.1.32",
     "axios": "^0.18.0",
     "less": "^3.0.2",
     "less-loader": "^4.1.0",
