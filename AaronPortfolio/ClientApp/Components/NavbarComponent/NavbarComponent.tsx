@@ -26,7 +26,7 @@ class NavbarComponent extends React.Component {
         return( 
             <div className="menubar">
                 <div className="menubar-content">
-                    <Navbar className="navbar navbar-default navbar-default-home navbar-static-top navbar-default-first">
+                    <Navbar className="navbar-default-home navbar-static-top navbar-default-first">
                         <div className="container">
                             <div className="row">
                                 <div className="col-md-2 col-sm-2">
