@@ -26,7 +26,7 @@ export default class AuthService {
         }
 
         login(user:LoginModel){
-            return axios.post('/users/login', user)
+            return axios.post('api/account/login/', user, { headers: { 'Content-Type': 'application/json' } })
         }
 
         logout(){
