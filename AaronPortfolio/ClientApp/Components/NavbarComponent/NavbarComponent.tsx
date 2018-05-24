@@ -7,6 +7,7 @@ import NavDrawer from '../../Services/NavbarDrawerService';
 import AuthService from '../../services/authService';
 
 class NavbarComponent extends React.Component {
+    
     private AuthService: AuthService = new AuthService();
     private NavDrawer: NavDrawer = new NavDrawer();
 
@@ -22,6 +23,8 @@ class NavbarComponent extends React.Component {
     logout = () => {
         this.AuthService.logout();
     }
+
+
     render() {
         return (
             <div className="menubar">
