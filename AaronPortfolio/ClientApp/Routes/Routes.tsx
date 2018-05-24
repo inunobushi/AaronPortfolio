@@ -8,7 +8,6 @@ import { LoginComponent } from '../Components/LoginComponent/LoginComponent';
 import { ScheduleComponent } from '../Components/ScheduleComponent/ScheduleComponent';
 import { ContactComponent } from '../Components/ContactComponent/ContactComponent';
 import { RegistrationComponent } from '../Components/RegistrationComponent/RegistrationComponent';
-import { NavMenuComponent } from '../Components/NavMenuComponent/NavMenuComponent';
 
 import PrivateRoute from '../Services/AnonymousRoute';
 
@@ -18,7 +17,6 @@ export const App = (props:any) => {
         return (
 
         <BrowserRouter basename={ baseUrl }>
-                 
                 <Switch>
                     <Route exact path="/" render={()=> <HomeComponent/>}/>
                     <Route path="/About" render={()=> <AboutComponent/>}/>
