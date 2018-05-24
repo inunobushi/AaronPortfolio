@@ -26,7 +26,7 @@ class NavbarComponent extends React.Component {
         return (
             <div className="menubar">
                 <div className="menubar-content">
-                    <nav className="navbar navbar-default navbar-static-top con">
+                    <Navbar className="navbar-static-top con">
                         <div className="container">
                             <div className="row">
                                 <div className="col-md-2 col-sm-2">
@@ -35,16 +35,16 @@ class NavbarComponent extends React.Component {
                                     </NavLink>{/*<!-- end site-title -->*/}
                                 </div>{/*}<!-- end col-md-4 -->*/}
                                 <div className="navbar-header">
-                                    <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                    <Navbar.Toggle type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                                         <span className="sr-only">Toggle navigation</span>
                                         <span className="icon-bar"></span>
                                         <span className="icon-bar"></span>
                                         <span className="icon-bar"></span>
-                                    </button>{/*<!-- end button -->*/}
+                                    </Navbar.Toggle>{/*<!-- end button -->*/}
                                 </div>{/*<!-- end navbar-header -->*/}
                                 <div className="col-md-10 col-sm-10 navbar-style">
                                     <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                        <ul className="nav navbar-nav">
+                                        <Nav className="">
                                             <li>
                                                 <a className="close"></a>
                                             </li>
@@ -72,12 +72,12 @@ class NavbarComponent extends React.Component {
                                             <li>
                                                 <NavLink to="/Contact">Contact</NavLink>
                                             </li>
-                                        </ul>{/*<!-- end nav -->*/}
+                                        </Nav>{/*<!-- end nav -->*/}
                                     </div>{/*<!-- end collapse navbar-collapse -->*/}
                                 </div>{/*<!-- end col-md-8 -->*/}
                             </div>{/*<!-- end row -->*/}
                         </div>{/*<!-- end container-fluid -->*/}
-                    </nav>{/*<!-- navbar -->*/}
+                    </Navbar>{/*<!-- navbar -->*/}
                 </div>{/*<!-- end menubar-content -->*/}
             </div>
         )
