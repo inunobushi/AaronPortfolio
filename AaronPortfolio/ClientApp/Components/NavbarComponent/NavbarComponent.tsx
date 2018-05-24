@@ -44,7 +44,7 @@ class NavbarComponent extends React.Component {
                                 </div>{/*<!-- end navbar-header -->*/}
                                 <div className="col-md-10 col-sm-10 navbar-style">
                                     <Navbar.Collapse className="" id="bs-example-navbar-collapse-1">
-                                        <Nav className="nav navbar-nav ">
+                                        <Nav className="">
                                             <li>
                                                 <NavLink to="/">Home</NavLink>
                                             </li>
