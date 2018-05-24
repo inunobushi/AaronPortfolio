@@ -27,7 +27,6 @@
     <Folder Include="Server\Controllers\" />
     <Folder Include="ClientApp\Components\HomeComponent\" />
     <Folder Include="ClientApp\Components\NavbarComponent\" />
-    <Folder Include="ClientApp\Components\NavMenuComponent\" />
     <Folder Include="ClientApp\JavaScript\" />
     <Folder Include="ClientApp\Fonts\" />
     <Folder Include="ClientApp\Components\AboutComponent\" />
@@ -39,10 +38,13 @@
     <Folder Include="ClientApp\Models\" />
     <Folder Include="ClientApp\Components\CopyrightComponent" />
     <Folder Include="ClientApp\Components\RegistrationComponent\" />
-    <Folder Include="ClientApp\Components\RegistrationComponent\RegistrationForm" />
+    <Folder Include="ClientApp\Components\RegistrationComponent\RegistrationFormComponent" />
     <Folder Include="ClientApp\Components\RegistrationComponent\RegistrationHeader" />
-    <Folder Include="ClientApp\Components\LoginComponent\LoginForm\" />
+    <Folder Include="ClientApp\Components\LoginComponent\LoginFormComponent\" />
     <Folder Include="Server\ViewModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="ClientApp\Components\NavMenuComponent\NavMenu\NavMenu.tsx" />
   </ItemGroup>
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
     <!-- Ensure Node.js is installed -->
