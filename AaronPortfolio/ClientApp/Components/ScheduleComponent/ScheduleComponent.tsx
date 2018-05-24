@@ -6,7 +6,7 @@ import NavbarComponent from '../NavbarComponent/NavbarComponent';
 export class ScheduleComponent extends React.Component{
     render() {
         return( 
-            <div className="app">
+            <div className="app" id="main">
                 <NavbarComponent />
                 <BigCalendar />
             </div>

@@ -12,7 +12,7 @@ export class AboutComponent extends React.Component{
 
     render() {
         return( 
-            <div className="app">
+            <div className="app" id="main">
                 <NavbarComponent />
                 <div className="main-page-content">
 

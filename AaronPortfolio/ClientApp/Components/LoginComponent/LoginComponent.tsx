@@ -14,7 +14,7 @@ export class LoginComponent extends React.Component{
 
     render(){
             return(
-                <div className="app">
+                <div className="app" id="main">
                     <NavbarComponent />
                     <div id="login" className="ptb ptb-xs-40 page-signin">
                         <div className="container">

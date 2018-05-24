@@ -9,7 +9,7 @@ import { CopyRightComponent } from '../CopyrightComponent/CopyrightComponent';
 export class RegistrationComponent extends React.Component{
     render() {
         return( 
-        <div className="app">
+        <div className="app" id="main">
             <NavbarComponent/>
             {/*<!-- Login Section -->*/}
             <RegistrationHeaderComponent/>
