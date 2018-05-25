@@ -2,9 +2,10 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 
 import AuthAPI from '../../../API/AuthAPI';
+import RegisterUser from '../../../Actions/RegActions';
 import { RegistrationModel } from '../../../Models/Registration.Model';
 import { IRegFields } from '../../../Interfaces/RegInterface';
-import { UPDATE_FIELD_AUTH, REG_USER } from '../../../Contants/Constants';
+import { UPDATE_FIELD_AUTH, REG_USER } from '../../../Constants/Constants';
 
 
 
@@ -39,9 +40,10 @@ class RegistrationFormComponent extends React.Component<IRegFields, {}> {
   updatePasswordConfirm = (e) => this.props.updateFieldAuth(e, 'PasswordConfirm');
 
   register() {
+    console.log("Im being called");
     const { FirstName, LastName, Email, Password, PasswordConfirm } = this.props;
     const user: RegistrationModel = new RegistrationModel(FirstName, LastName, Email, Password, PasswordConfirm);
-    this.props.submitForm(user)
+    this.props.submitForm(user);
   }
 
 
@@ -86,14 +88,14 @@ class RegistrationFormComponent extends React.Component<IRegFields, {}> {
                               </div>
                               <div className="form-group">
                                 <div className="ui-input-group">
-                                  <input type="text" onChange={this.updatePassword}
+                                  <input type="password" onChange={this.updatePassword}
                                     value={this.props.Password} className="form-control" placeholder="Password" required />
                                   <span className="input-bar"></span>
                                 </div>
                               </div>
                               <div className="form-group">
                                 <div className="ui-input-group">
-                                  <input type="text" onChange={this.updatePasswordConfirm}
+                                  <input type="password" onChange={this.updatePasswordConfirm}
                                     value={this.props.PasswordConfirm} className="form-control" placeholder="Password Confirmation" required />
                                   <span className="input-bar"></span>
                                 </div>
@@ -122,15 +124,19 @@ class RegistrationFormComponent extends React.Component<IRegFields, {}> {
 }
 
 const mapStateToProps = (store) => {
-
+console.log(store.auth);
   return {
-
+    FirstName: store.auth.FirstName,
+    LastName: store.auth.LastName,
+    Email: store.auth.Email,
+    Password: store.auth.Password,
+    PasswordConfirm: store.auth.PasswordConfirm
   }
 }
 
 const mapDispatchToProps = (dispatch) => ({
   updateFieldAuth: (event, field) => dispatch({ type: UPDATE_FIELD_AUTH, field, payload: event.target.value }),
-  submitForm: (user) => dispatch({ type: REG_USER, payload: user }),
+  submitForm: (user) => RegisterUser(user)
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(RegistrationFormComponent);
