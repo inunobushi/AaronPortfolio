@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import AuthService from '../../../Services/AuthService';
 import { LoginModel }from '../../../Models/login.model';
 import { ILoginFields } from '../../../Interfaces/LoginInterface';
-import { UPDATE_FIELD_LOGIN, LOGIN_USER } from '../../../Contants/Constants';
+import { UPDATE_FIELD_LOGIN, LOGIN_USER } from '../../../Constants/Constants';
 
 
 

@@ -1,4 +1,4 @@
-import { LOGIN_USER, UPDATE_FIELD_LOGIN } from '../Contants/Constants'
+import { LOGIN_USER, UPDATE_FIELD_LOGIN } from '../Constants/Constants'
 
 const initialState = {
     currentLoginForm: null

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import { ContactModel } from '../../../Models/Contact.Model';
 import {IContactFields} from '../../../Interfaces/ContactInterface';
-import { UPDATE_FIELD_CONTACT, CONTACT_FORM } from '../../../Contants/Constants';
+import { UPDATE_FIELD_CONTACT, CONTACT_FORM } from '../../../Constants/Constants';
 
 export class ContactFormComponent extends React.Component <IContactFields, {}>{
     constructor(props){

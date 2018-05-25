@@ -1,4 +1,4 @@
-import { UPDATE_FIELD_CONTACT, CONTACT_FORM } from '../Contants/Constants'
+import { UPDATE_FIELD_CONTACT, CONTACT_FORM } from '../Constants/Constants'
 
 const initialState = {
     currentContactForm: null

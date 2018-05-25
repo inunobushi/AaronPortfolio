@@ -1,4 +1,4 @@
-import { UPDATE_FIELD_AUTH, REG_USER } from '../Contants/Constants'
+import { UPDATE_FIELD_AUTH, REG_USER } from '../Constants/Constants'
 
 const initialState = {
     currentUser: null
@@ -6,6 +6,7 @@ const initialState = {
 
 
 export default (state = initialState, action) => {
+    console.log(action);
     switch(action.type) {
         case REG_USER:
             return { ...state, currentUser: action.payload.data}
