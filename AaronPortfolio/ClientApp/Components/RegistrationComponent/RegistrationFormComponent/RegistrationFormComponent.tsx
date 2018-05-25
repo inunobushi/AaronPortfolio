@@ -1,10 +1,14 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 
+import ReCaptchaComponent from '../../ReCaptcha/ReCaptcha';
+
 import AuthAPI from '../../../API/AuthAPI';
 import { RegistrationModel } from '../../../Models/Registration.Model';
 import { IRegFields } from '../../../Interfaces/RegInterface';
-import { UPDATE_FIELD_AUTH, REG_USER } from '../../../Contants/Constants';
+import { UPDATE_FIELD_AUTH, REG_USER } from '../../../Constants/Constants';
+
+let captcha;
 
 
 
@@ -41,9 +45,9 @@ class RegistrationFormComponent extends React.Component<IRegFields, {}> {
   register() {
     const { FirstName, LastName, Email, Password, PasswordConfirm } = this.props;
     const user: RegistrationModel = new RegistrationModel(FirstName, LastName, Email, Password, PasswordConfirm);
-    this.props.submitForm(user)
+    this.props.submitForm(user);
+    () => { captcha.execute()};
   }
-
 
   render() {
     return (
