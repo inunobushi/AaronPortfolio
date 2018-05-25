@@ -2,11 +2,11 @@
 
     constructor(
         FirstName: string,
-    LastName: string,
-    Email: string,
-    Subject: string,
-    Message: string
-    ){
+        LastName: string,
+        Email: string,
+        Subject: string,
+        Message: string
+    ) {
         this.FirstName = FirstName;
         this.LastName = LastName;
         this.Email = Email;
