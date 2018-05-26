@@ -8,7 +8,7 @@ const initialState = {
 export default (state = initialState, action) => {
     switch(action.type) {
         case LOGIN_USER:
-            return { ...state, currentUser: action.payload.data}
+            return { ...state, currentLoginForm: action.payload.data}
         case UPDATE_FIELD_LOGIN:
             return {...state, [action.field]: action.payload}
         default: 
