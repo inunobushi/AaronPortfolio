@@ -13,12 +13,14 @@ namespace AaronPortfolio.Server.Controllers
     public class AccountController : Controller
     {
         
+        // POST api/values
         [HttpPost("register")]
 		public void Register([FromBody]UserViewModel user)
 		{
 			var newUser  = user;
 		}
-        
+
+        // POST api/values
 		[HttpPost("login")]
         public void Login([FromBody]LoginViewModel user)
         {
