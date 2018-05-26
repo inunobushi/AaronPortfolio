@@ -1,11 +1,15 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 
+// import ReCaptchaComponent from '../../ReCaptcha/ReCaptcha';
+
 import AuthAPI from '../../../API/AuthAPI';
 import RegisterUser from '../../../Actions/RegActions';
 import { RegistrationModel } from '../../../Models/Registration.Model';
 import { IRegFields } from '../../../Interfaces/RegInterface';
 import { UPDATE_FIELD_AUTH, REG_USER } from '../../../Constants/Constants';
+
+//let captcha;
 
 
 
@@ -44,8 +48,8 @@ class RegistrationFormComponent extends React.Component<IRegFields, {}> {
     const { FirstName, LastName, Email, Password, PasswordConfirm } = this.props;
     const user: RegistrationModel = new RegistrationModel(FirstName, LastName, Email, Password, PasswordConfirm);
     this.props.submitForm(user);
+    //() => { captcha.execute()};
   }
-
 
   render() {
     return (
@@ -136,7 +140,7 @@ console.log(store.auth);
 
 const mapDispatchToProps = (dispatch) => ({
   updateFieldAuth: (event, field) => dispatch({ type: UPDATE_FIELD_AUTH, field, payload: event.target.value }),
-  submitForm: (user) => RegisterUser(user)
+  submitForm: (user) => RegisterUser(dispatch, user)
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(RegistrationFormComponent);
