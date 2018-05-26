@@ -3,11 +3,10 @@ import { connect } from 'react-redux';
 
 // import ReCaptchaComponent from '../../ReCaptcha/ReCaptcha';
 
-import AuthAPI from '../../../API/AuthAPI';
 import RegisterUser from '../../../Actions/RegActions';
 import { RegistrationModel } from '../../../Models/Registration.Model';
 import { IRegFields } from '../../../Interfaces/RegInterface';
-import { UPDATE_FIELD_AUTH, REG_USER } from '../../../Constants/Constants';
+import { UPDATE_FIELD_AUTH } from '../../../Constants/Constants';
 
 //let captcha;
 
@@ -21,6 +20,7 @@ class RegistrationFormComponent extends React.Component<IRegFields, {}> {
     this.register = this.register.bind(this);
     this.updateFirstName = this.updateFirstName.bind(this);
     this.updateLastName = this.updateLastName.bind(this);
+    this.updateUsername = this.updateUsername.bind(this);
     this.updateEmail = this.updateEmail.bind(this);
     this.updatePassword = this.updatePassword.bind(this);
     this.updatePasswordConfirm = this.updatePasswordConfirm.bind(this);
@@ -39,14 +39,15 @@ class RegistrationFormComponent extends React.Component<IRegFields, {}> {
 
   updateFirstName = (e) => this.props.updateFieldAuth(e, 'FirstName');
   updateLastName = (e) => this.props.updateFieldAuth(e, 'LastName');
+  updateUsername = (e) => this.props.updateFieldAuth(e, 'Username');
   updateEmail = (e) => this.props.updateFieldAuth(e, 'Email');
   updatePassword = (e) => this.props.updateFieldAuth(e, 'Password');
   updatePasswordConfirm = (e) => this.props.updateFieldAuth(e, 'PasswordConfirm');
 
   register() {
-    console.log("Im being called");
-    const { FirstName, LastName, Email, Password, PasswordConfirm } = this.props;
-    const user: RegistrationModel = new RegistrationModel(FirstName, LastName, Email, Password, PasswordConfirm);
+    
+    const { FirstName, LastName, Username, Email, Password, PasswordConfirm } = this.props;
+    const user: RegistrationModel = new RegistrationModel(FirstName, LastName, Username, Email, Password, PasswordConfirm);
     this.props.submitForm(user);
     //() => { captcha.execute()};
   }
@@ -80,6 +81,13 @@ class RegistrationFormComponent extends React.Component<IRegFields, {}> {
                                 <div className="ui-input-group">
                                   <input type="text" onChange={this.updateLastName}
                                     value={this.props.LastName} className="form-control" placeholder="Last Name" required />
+                                  <span className="input-bar"></span>
+                                </div>
+                              </div>
+                              <div className="form-group">
+                                <div className="ui-input-group">
+                                  <input type="text" onChange={this.updateUsername}
+                                    value={this.props.Username} className="form-control" placeholder="Last Name" required />
                                   <span className="input-bar"></span>
                                 </div>
                               </div>
@@ -132,6 +140,7 @@ console.log(store.auth);
   return {
     FirstName: store.auth.FirstName,
     LastName: store.auth.LastName,
+    Username: store.auth.Username,
     Email: store.auth.Email,
     Password: store.auth.Password,
     PasswordConfirm: store.auth.PasswordConfirm
