@@ -2,10 +2,13 @@
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+
+import login from '../../../Actions/LoginActions';
 import AuthService from '../../../Services/AuthService';
 import { LoginModel }from '../../../Models/login.model';
 import { ILoginFields } from '../../../Interfaces/LoginInterface';
 import { UPDATE_FIELD_LOGIN, LOGIN_USER } from '../../../Constants/Constants';
+import { Button } from 'react-bootstrap';
 
 
 
@@ -22,7 +25,8 @@ export class LoginFormComponent extends React.Component <ILoginFields, {}>{
     updateEmail = (e) => this.props.updateFieldLogin(e, 'Email');
     updatePassword = (e) => this.props.updateFieldLogin(e, 'Password');
 
-    loginUser (){
+    loginUser (e){
+        e.preventDefault();
         const {Email, Password } = this.props;
         const user: LoginModel = new LoginModel( Email, Password);
         this.props.submitLogin(user);
@@ -45,14 +49,14 @@ export class LoginFormComponent extends React.Component <ILoginFields, {}>{
                             </div>
                             <div className="form-group">
                                 <div className="ui-input-group">
-                                    <input type="text" onChange={this.updatePassword} 
+                                    <input type="password" onChange={this.updatePassword} 
                                     value={this.props.Password}
                                     className="form-control" placeholder="Password" required/>
                                     <span className="input-bar"></span>
                                 </div>
                             </div>
                         </fieldset>
-                        <div className="card-action no-border text-right"> <Link to="/" className="color-primary">Sign in</Link> </div>
+                        <div className="card-action no-border text-right"> <Button onClick={this.loginUser} className="color-primary">Sign in</Button> </div>
                         <span className="divider-h"></span><a href="#/page/forgot-password">Forgot your password?</a>
                     </form>
                 </div>
@@ -65,13 +69,14 @@ export class LoginFormComponent extends React.Component <ILoginFields, {}>{
 const mapStateToProps = (store) => {
 
     return {
-  
+        Email: store.login.Email,
+        Password: store.login.Password
     }
   }
   
   const mapDispatchToProps = (dispatch) => ({
     updateFieldLogin: (event, field) => dispatch({ type: UPDATE_FIELD_LOGIN, field, payload: event.target.value }),
-    submitLogin: (loginForm) => dispatch({ type: LOGIN_USER, payload: loginForm }),
+    submitLogin: (user) => login(dispatch, user),
   })
 
   export default connect(mapStateToProps, mapDispatchToProps)(LoginFormComponent);
