@@ -14,7 +14,7 @@ namespace AaronPortfolio.Server.Controllers
     {
         
         // POST api/values
-        [HttpPost("contact")]
+        [HttpPost("contactdata")]
         public void Post([FromBody] ContactViewModel contactForm)
         {
             var ContactForm = contactForm;
