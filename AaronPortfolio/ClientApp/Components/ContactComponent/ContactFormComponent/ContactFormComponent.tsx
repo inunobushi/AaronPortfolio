@@ -2,9 +2,12 @@ import * as React from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 
+
+import ContactForm from '../../../Actions/ContactActions';
 import { ContactModel } from '../../../Models/Contact.Model';
 import {IContactFields} from '../../../Interfaces/ContactInterface';
-import { UPDATE_FIELD_CONTACT, CONTACT_FORM } from '../../../Constants/Constants';
+import { UPDATE_FIELD_CONTACT } from '../../../Constants/Constants';
+import { Button } from 'react-bootstrap';
 
 export class ContactFormComponent extends React.Component <IContactFields, {}>{
     constructor(props){
@@ -22,7 +25,8 @@ export class ContactFormComponent extends React.Component <IContactFields, {}>{
     updateSubject = (e) => this.props.updateFieldContact(e, 'Subject');
     updateMessage = (e) => this.props.updateFieldContact(e, 'Message');
 
-    contactSubmit(){
+    contactSubmit(e){
+        e.preventDefault();
         const {FirstName, LastName, Email, Subject, Message } = this.props;
         const contactForm: ContactModel = new ContactModel(FirstName, LastName, Email, Subject, Message);
         this.props.submitContactForm(contactForm);
@@ -39,7 +43,7 @@ export class ContactFormComponent extends React.Component <IContactFields, {}>{
                         <form onSubmit={this.contactSubmit} id="contactForm" className="contact-form shake" data-toggle="validator">
                             <div className="form-group">
                                 <div className="controls">
-                                    <input type="text" id="name" className="form-control" placeholder="Name" onChange={this.updateFirstName} 
+                                    <input type="text" id="name" className="form-control" placeholder="First Name" onChange={this.updateFirstName} 
                                     value={this.props.FirstName}
                                     required data-error="Please enter your First Name" />
                                     <div className="help-block with-errors"></div>
@@ -47,7 +51,7 @@ export class ContactFormComponent extends React.Component <IContactFields, {}>{
                             </div>{/*<!-- end form-group -->*/}
                             <div className="form-group">
                                 <div className="controls">
-                                    <input type="text" id="name" className="form-control" placeholder="Name" onChange={this.updateLastName} 
+                                    <input type="text" id="name" className="form-control" placeholder="Last Name" onChange={this.updateLastName} 
                                     value={this.props.LastName}
                                     required data-error="Please enter your Last Name" />
                                     <div className="help-block with-errors"></div>
@@ -77,7 +81,7 @@ export class ContactFormComponent extends React.Component <IContactFields, {}>{
                                     <div className="help-block with-errors"></div>
                                 </div>{/*<!-- end controls -->*/}
                             </div>{/*<!-- end form-group -->*/}
-                            <button type="submit" id="submit" className="btn btn-success text-center"> Send Message</button>
+                            <Button type="submit" id="submit" className="btn btn-success text-center" onClick={this.contactSubmit}> Send Message</Button>
                             <div id="msgSubmit" className="h3 text-center hidden"></div>
                             <div className="clearfix"></div>
                         </form>
@@ -91,13 +95,17 @@ export class ContactFormComponent extends React.Component <IContactFields, {}>{
 const mapStateToProps = (store) => {
 
     return {
-  
+        FirstName: store.contact.FirstName,
+        LastName: store.contact.LastName,
+        Email: store.contact.Email,
+        Subject: store.contact.Subject,
+        Message: store.contact.Message
     }
   }
   
   const mapDispatchToProps = (dispatch) => ({
     updateFieldContact: (event, field) => dispatch({ type: UPDATE_FIELD_CONTACT, field, payload: event.target.value }),
-    submitContactForm: (contactForm) => dispatch({ type: CONTACT_FORM, payload: contactForm }),
+    submitContactForm: (contactForm) => ContactForm(dispatch, contactForm),
   })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContactFormComponent); 
