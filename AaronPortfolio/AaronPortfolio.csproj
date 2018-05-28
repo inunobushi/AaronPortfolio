@@ -10,6 +10,8 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
     <PackageReference Include="MongoDB.Driver" Version="2.6.0" />
+    <PackageReference Include="AutoMapper" Version="6.2.2" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="3.2.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -43,9 +45,17 @@
     <Folder Include="ClientApp\Components\LoginComponent\LoginFormComponent\" />
     <Folder Include="Server\ViewModels\" />
     <Folder Include="ClientApp\Components\ErrorComponent\" />
+    <Folder Include="Server\Middleware\" />
+    <Folder Include="Server\Interfaces\" />
+    <Folder Include="Server\Helpers\" />
+    <Folder Include="Server\Middleware\Authentication\" />
+    <Folder Include="Server\Middleware\Contact\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="ClientApp\Components\NavMenuComponent\NavMenu\NavMenu.tsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Server\Interfaces\CommonInterfaces.cs" />
   </ItemGroup>
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
     <!-- Ensure Node.js is installed -->
