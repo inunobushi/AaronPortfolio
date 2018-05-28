@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 
-namespace AaronPortfolio.Server.ViewModels
+namespace Scheduling.AaronPortfolio.Server.ViewModels
 {
     // You may need to install the Microsoft.AspNetCore.Http.Abstractions package into your project
     public class UserViewModel

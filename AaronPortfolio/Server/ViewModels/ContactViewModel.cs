@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace AaronPortfolio.Server.ViewModels
+namespace Scheduling.AaronPortfolio.Server.ViewModels
 {
     public class ContactViewModel
     {
