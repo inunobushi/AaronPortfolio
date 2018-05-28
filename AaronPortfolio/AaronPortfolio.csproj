@@ -42,6 +42,7 @@
     <Folder Include="ClientApp\Components\RegistrationComponent\RegistrationHeader" />
     <Folder Include="ClientApp\Components\LoginComponent\LoginFormComponent\" />
     <Folder Include="Server\ViewModels\" />
+    <Folder Include="ClientApp\Components\ErrorComponent\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="ClientApp\Components\NavMenuComponent\NavMenu\NavMenu.tsx" />
