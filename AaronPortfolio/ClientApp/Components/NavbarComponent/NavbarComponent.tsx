@@ -3,18 +3,53 @@ import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import NavDrawer from '../../Services/NavbarDrawerService';
+// import NavDrawer from '../../Services/NavbarDrawerService';
 import AuthService from '../../services/authService';
 
-class NavbarComponent extends React.Component {
-    
+interface INavbarDrawer {
+    isLoggedIn: boolean;
+    state: any
+}
+
+class NavbarComponent extends React.Component<INavbarDrawer, any> {
+
     private AuthService: AuthService = new AuthService();
-    private NavDrawer: NavDrawer = new NavDrawer();
 
     constructor(props: any) {
         super(props);
         this.isUserLoggedIn = this.isUserLoggedIn.bind(this);
         this.logout = this.logout.bind(this);
+        this.state = {
+            open: false,
+            mainWidth: null
+        }
+        this.toggleNav = this.toggleNav.bind(this);
+    }
+
+    toggleNav() {
+
+
+        this.setState({ open: !this.state.open });
+        setTimeout(() => {
+            if (this.state.open) {
+
+                document.getElementById("mySidenav").style.width = "250px";
+                document.getElementById("main").style.marginLeft = "250px";
+            } else {
+                const w = window.innerWidth;
+                if (!this.state.mainWidth && w > 767) {
+                    this.setState({ mainWidth: String(w) }, () => {
+                        document.getElementById("mySidenav").style.width = this.state.mainWidth;
+                        document.getElementById("main").style.marginLeft = "0";
+                    })
+                } else {
+                    document.getElementById("mySidenav").style.width = this.state.mainWidth;
+                    document.getElementById("main").style.marginLeft = "0";
+
+                }
+            }
+        }, 10)
+        //document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
     }
 
     isUserLoggedIn() {
@@ -23,6 +58,8 @@ class NavbarComponent extends React.Component {
     logout = () => {
         this.AuthService.logout();
     }
+
+
 
 
     render() {
@@ -38,19 +75,16 @@ class NavbarComponent extends React.Component {
                                     </NavLink>{/*<!-- end site-title -->*/}
                                 </div>{/*}<!-- end col-md-4 -->*/}
                                 <div className="navbar-header">
-                                    <Navbar.Toggle type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                    <button onClick={this.toggleNav} type="button" className="navbar-toggle" aria-expanded="false">
                                         <span className="sr-only">Toggle navigation</span>
                                         <span className="icon-bar"></span>
                                         <span className="icon-bar"></span>
                                         <span className="icon-bar"></span>
-                                    </Navbar.Toggle>{/*<!-- end button -->*/}
+                                    </button>{/*<!-- end button -->*/}
                                 </div>{/*<!-- end navbar-header -->*/}
                                 <div className="col-md-10 col-sm-10 navbar-style">
-                                    <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                    <div className="navbar-collapse sidenav" id="mySidenav">
                                         <Nav className="">
-                                            <li>
-                                                <a className="close"></a>
-                                            </li>
                                             <li>
                                                 <NavLink to="/">Home</NavLink>
                                             </li>
