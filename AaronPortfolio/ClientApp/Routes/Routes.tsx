@@ -8,6 +8,7 @@ import { LoginComponent } from '../Components/LoginComponent/LoginComponent';
 import { ScheduleComponent } from '../Components/ScheduleComponent/ScheduleComponent';
 import { ContactComponent } from '../Components/ContactComponent/ContactComponent';
 import { RegistrationComponent } from '../Components/RegistrationComponent/RegistrationComponent';
+import { WebError } from '../Components/ErrorComponent/Error';
 
 import PrivateRoute from '../Services/AnonymousRoute';
 
@@ -26,6 +27,7 @@ export const App = (props:any) => {
                     <PrivateRoute path="/Schedule" component={ScheduleComponent}/>
                     <Route path="/Registration" render={()=><RegistrationComponent/>}/>
                     <Route path="/Contact" render={()=> <ContactComponent/>}/>
+                    <Route component={()=> <WebError/>}/>
                 </Switch>
         </BrowserRouter>
         )
