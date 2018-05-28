@@ -31,12 +31,13 @@ class NavbarComponent extends React.Component<INavbarDrawer, any> {
 
         this.setState({ open: !this.state.open });
         setTimeout(() => {
-            if (this.state.open) {
+            const w = window.innerWidth;
 
+            if (this.state.open) {
                 document.getElementById("mySidenav").style.width = "250px";
                 document.getElementById("main").style.marginLeft = "250px";
             } else {
-                const w = window.innerWidth;
+
                 if (!this.state.mainWidth && w > 767) {
                     this.setState({ mainWidth: String(w) }, () => {
                         document.getElementById("mySidenav").style.width = this.state.mainWidth;
