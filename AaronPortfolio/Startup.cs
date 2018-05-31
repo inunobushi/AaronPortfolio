@@ -12,11 +12,22 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using AutoMapper;
 using System.Text;
-using AaronPortfolio.Server.Helpers;
+using Scheduling.AaronPortfolio.Server.Helpers;
 using Scheduling.AaronPortfolio.Server.Models;
+using Scheduling.AaronPortfolio.Server.Middleware.Authentication;
 
 namespace Scheduling
 {
+    public class UserServices
+    {
+        private IAuthenticationService _authService;
+        private IRegistrationService _registrationService;
+        private ICommonServices _commonServices;
+        private IManageAccountService _manageAccountService;
+        private IMapper _mapper;
+        private readonly AppSettings _appSettings;
+    }
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -35,7 +46,6 @@ namespace Scheduling
                 options.ConnectionString = Configuration.GetSection("mongodb://localhost:27017/inunotaisho").Value;
                 options.Database = Configuration.GetSection("mongodb://localhost:27017/inunotaisho").Value;
             });
-            services.AddMvc();
             services.AddAutoMapper();
 
             // configure strongly typed settings objects
@@ -64,7 +74,16 @@ namespace Scheduling
             });
 
             // configure DI for application services
-            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IAuthenticationService, Authentication>();
+            services.AddScoped<IRegistrationService, Registration>();
+            services.AddScoped<ICommonServices, CommonMethods>();
+            services.AddScoped<IManageAccountService, ManageAccount>();
+
+
+            services.AddMvc();
+
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
