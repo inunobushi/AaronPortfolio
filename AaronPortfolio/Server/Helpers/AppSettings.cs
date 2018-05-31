@@ -1,5 +1,5 @@
 ﻿using System;
-namespace AaronPortfolio.Server.Helpers
+namespace Scheduling.AaronPortfolio.Server.Helpers
 {
     public class AppSettings
     {
