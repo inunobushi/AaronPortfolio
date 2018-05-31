@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace AaronPortfolio.Server.Helpers
+namespace Scheduling.AaronPortfolio.Server.Helpers
 {
     public class AppException : Exception
     {
