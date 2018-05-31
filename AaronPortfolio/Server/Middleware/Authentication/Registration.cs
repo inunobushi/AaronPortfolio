@@ -1,52 +1,62 @@
 ﻿using System;
 using System.Security.Cryptography;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
-using AaronPortfolio.Server.Helpers;
+using MongoDB.Driver;
+using Scheduling.AaronPortfolio.Server.Models;
+using Scheduling.AaronPortfolio.Server.Helpers;
+using Microsoft.Extensions.Options;
 
-namespace AaronPortfolio.Server.Middleware.Authentication
+namespace Scheduling.AaronPortfolio.Server.Middleware.Authentication
 {
     public interface IRegistrationService
     {
-        User Create(User user, string password);
+        void Create(UserSchema user, string password);
     }
 
     public class Registration : IRegistrationService
     {
 
+        private DataContext _context;
 
-        public User Create(User user, string password)
+        public Registration(IOptions<Settings> settings)
+        {
+            _context = new DataContext(settings);
+        }
+
+
+        public async void Create(UserSchema user, string password)
         {
             // validation
             if (string.IsNullOrWhiteSpace(password))
                 throw new AppException("Password is required");
 
-            if (_context.Users.Any(x => x.Username == user.Username))
+            var filter = Builders<UserSchema>.Filter.Eq(s => s.Username, user.Username);
+            var userResult = _context.Users.Find(filter).FirstOrDefault();
+
+            if (user!=null)
                 throw new AppException("Username " + user.Username + " is already taken");
 
-            byte[] passwordHash, passwordSalt;
-            CreatePasswordHash(password, out passwordHash, out passwordSalt);
+            //byte[] passwordHash, passwordSalt;
+            //CreatePasswordHash(password, out passwordHash, out passwordSalt);
 
-            user.PasswordHash = passwordHash;
-            user.PasswordSalt = passwordSalt;
+            //user.PasswordHash = passwordHash;
+            //user.PasswordSalt = passwordSalt;
 
-            _context.Users.Add(user);
-            _context.SaveChanges();
-
-            return user;
+            await _context.Users.InsertOneAsync(user);
         }
 
         // private helper methods
 
-        private static void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
-        {
-            if (password == null) throw new ArgumentNullException("password");
-            if (string.IsNullOrWhiteSpace(password)) throw new ArgumentException("Value cannot be empty or whitespace only string.", "password");
+        //private static void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
+        //{
+        //    if (password == null) throw new ArgumentNullException("password");
+        //    if (string.IsNullOrWhiteSpace(password)) throw new ArgumentException("Value cannot be empty or whitespace only string.", "password");
 
-            using (var hmac = new System.Security.Cryptography.HMACSHA512())
-            {
-                passwordSalt = hmac.Key;
-                passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
-            }
-        }
+        //    using (var hmac = new System.Security.Cryptography.HMACSHA512())
+        //    {
+        //        passwordSalt = hmac.Key;
+        //        passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
+        //    }
+        //}
     }
 }
