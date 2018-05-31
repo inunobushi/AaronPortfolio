@@ -1,25 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.Extensions.Options;
+using MongoDB.Driver;
+using Scheduling.AaronPortfolio.Server.Helpers;
+using Scheduling.AaronPortfolio.Server.Models;
 
-namespace AaronPortfolio.Server.Middleware.Authentication
+namespace Scheduling.AaronPortfolio.Server.Middleware.Authentication
 {
     public interface ICommonServices
     {
-        IEnumerable<User> GetAll();
-        User GetById(int id);
+        IEnumerable<UserSchema> GetAll();
+        UserSchema GetById(string id);
     }
 
     public class CommonMethods : ICommonServices
     {
-
-        public IEnumerable<User> GetAll()
+        private DataContext _context;
+        public CommonMethods(IOptions<Settings> settings)
         {
-            return _context.Users;
+            _context = new DataContext(settings);
         }
 
-        public User GetById(int id)
+        public IEnumerable<UserSchema> GetAll()
         {
-            return _context.Users.Find(id);
+            return _context.Users.Find(_ => true).ToList();
+        }
+
+        public UserSchema GetById(string id)
+        {
+            var filter = Builders<UserSchema>.Filter.Eq(s => s.Id, id);
+            return _context.Users.Find(filter).FirstOrDefault();
         }
     }
 }
