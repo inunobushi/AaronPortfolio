@@ -1,21 +1,22 @@
 ﻿import * as React from 'react';
-import {Link, Redirect} from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 import NavbarComponent from '../NavbarComponent/NavbarComponent';
 import { CopyRightComponent } from '../CopyrightComponent/CopyrightComponent';
-import LoginFormComponent  from './LoginFormComponent/LoginFormComponent';
+import LoginFormComponent from './LoginFormComponent/LoginFormComponent';
 
-export class LoginComponent extends React.Component{
+export class LoginComponent extends React.Component {
 
-            constructor(props:any){
-                super(props);
-                
-            }
+    constructor(props: any) {
+        super(props);
 
-    render(){
-            return(
-                <div className="app" id="main">
-                    <NavbarComponent />
+    }
+
+    render() {
+        return (
+            <div className="app" id="main">
+                <NavbarComponent />
+                <div className="main-page-content">
                     <div id="login" className="ptb ptb-xs-40 page-signin">
                         <div className="container">
                             <div className="row">
@@ -28,7 +29,7 @@ export class LoginComponent extends React.Component{
                                                         <h2 className="title-header">Login</h2>
                                                         <div className="underline1"></div>
                                                     </section>
-                                                    <LoginFormComponent/>
+                                                    <LoginFormComponent />
                                                 </div>
                                             </div>
                                         </div>
@@ -38,9 +39,10 @@ export class LoginComponent extends React.Component{
                             </div>
                         </div>
                     </div>
-                    <CopyRightComponent/>
-                </div> 
-            )
-        }
+                </div>
+                <CopyRightComponent />
+            </div>
+        )
+    }
 
 }
