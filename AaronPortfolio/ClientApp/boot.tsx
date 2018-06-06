@@ -11,7 +11,6 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import { AppContainer } from 'react-hot-loader';
-import { BrowserRouter, HashRouter } from 'react-router-dom';
 import App from './Routes/Routes';
 import Store from './Store/store';
  
