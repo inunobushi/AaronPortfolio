@@ -10,13 +10,12 @@
     color: white;
 }
 
-.react-app{
+#react-app{
     height:  100vh !important;
-    width: 100%;
     /* position: absolute; */
 }
-.app{
-    height:  100vh !important;
+.app {
+    
     /* position:relative; */
 }
 
