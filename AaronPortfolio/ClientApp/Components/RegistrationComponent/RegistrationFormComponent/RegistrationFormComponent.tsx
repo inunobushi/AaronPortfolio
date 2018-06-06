@@ -54,18 +54,12 @@ class RegistrationFormComponent extends React.Component<IRegFields, {}> {
 
   render() {
     return (
-      <div id="login" className="ptb ptb-xs-40 page-signin">
-        <div className="container">
           <div className="row">
             <div className="col-sm-12">
               <div className="main-body">
                 <div className="body-inner">
                   <div className="card bg-white">
                     <div className="card-content">
-                      <section className="logo text-center">
-                        <h2 className="title-header">Register</h2>
-                        <div className="underline1"></div>
-                      </section>
                       <div className="row about-row">
                         <div className="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 contact-col ">
                           <form onSubmit={this.register} className="form-horizontal ng-pristine ng-valid">
@@ -87,7 +81,7 @@ class RegistrationFormComponent extends React.Component<IRegFields, {}> {
                               <div className="form-group">
                                 <div className="ui-input-group">
                                   <input type="text" onChange={this.updateUsername}
-                                    value={this.props.Username} className="form-control" placeholder="Last Name" required />
+                                    value={this.props.Username} className="form-control" placeholder="Username" required />
                                   <span className="input-bar"></span>
                                 </div>
                               </div>
@@ -129,8 +123,6 @@ class RegistrationFormComponent extends React.Component<IRegFields, {}> {
               </div>
             </div>
           </div>
-        </div>
-      </div>
     )
   }
 }
