@@ -43,8 +43,9 @@ namespace Scheduling
             services.AddCors();
             services.Configure<Settings>(options =>
             {
-                options.ConnectionString = Configuration.GetSection("mongodb://localhost:27017/aaron").Value;
-                options.Database = Configuration.GetSection("mongodb://localhost:27017/aaron").Value;
+                options.ConnectionString = "mongodb://localhost:27017";
+                options.Database = "aaron";
+
             });
             services.AddAutoMapper();
 
