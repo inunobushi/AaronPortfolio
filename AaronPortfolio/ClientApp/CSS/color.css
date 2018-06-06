@@ -2373,8 +2373,77 @@ section {
     margin-top: 0px;
 }
 
+/*============================================================== LOGIN =====================================================================*/
+#login{
+    width: 100%;
+    height: auto;
+    background-color: #fcfcfc;
+}
 
+#login-content{
+    background: url(../Images/Lamisa/contact.jpg) 50% 0 no-repeat fixed;
+    margin: 0;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    padding-top: 155px;
+    padding-bottom: 0px;
+}
 
+#login-content::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.9);
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/*============================================================== LOGIN =====================================================================*/
+#reg{
+    width: 100vw;
+    height: 100vh;
+    background-color: #fcfcfc;
+}
+
+#reg-content{
+    background: url(../Images/Lamisa/contact.jpg) 50% 0 no-repeat fixed;
+    margin: 0;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    padding-top: 155px;
+    padding-bottom: 0px;
+}
+
+#reg-content::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.9);
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.reg-grid{
+    position: relative;
+    z-index: 111;
+}
+
+.reg-form-details {
+    margin-top: 0px;
+    padding-bottom: 0px;
+}
 
 /*============================================================== CONTACT =====================================================================*/
 
