@@ -33,7 +33,7 @@ namespace Scheduling.AaronPortfolio.Server.Middleware.Authentication
             var filter = Builders<UserSchema>.Filter.Eq(s => s.Username, user.Username);
             var userResult = _context.Users.Find(filter).FirstOrDefault();
 
-            if (user!=null)
+            if (userResult!=null)
                 throw new AppException("Username " + user.Username + " is already taken");
 
             //byte[] passwordHash, passwordSalt;
