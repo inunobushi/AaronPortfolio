@@ -52,8 +52,13 @@ namespace AaronPortfolio.Server.Account.Controllers
         // POST api/values
         [AllowAnonymous]
         [HttpPost("register")]
-		public void Register([FromBody]UserViewModel userDto)
+		public IActionResult Register([FromBody]UserViewModel userDto)
 		{
+            if (!ModelState.IsValid)
+            {
+                return BadRequest("Enter valid data");
+            }
+
             var newUser  = _mapper.Map<UserSchema>(userDto);
 
             try
@@ -61,12 +66,12 @@ namespace AaronPortfolio.Server.Account.Controllers
                 // save 
                 _registrationService.Create(newUser, userDto.Password);
 
-                Ok();
+                return Ok();
             }
             catch (AppException ex)
             {
                 // return error message if there was an exception
-                BadRequest(ex.Message);
+                return BadRequest(ex.Message);
             }
 		}
 
