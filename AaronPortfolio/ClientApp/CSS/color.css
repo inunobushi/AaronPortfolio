@@ -185,6 +185,7 @@ body{
 .menubar {
     height: auto;
     width: 100%;
+    background-color: #fff;
 }
 .navbar-default {
     background-color: transparent;
