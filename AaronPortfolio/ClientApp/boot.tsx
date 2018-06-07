@@ -1,4 +1,6 @@
 import 'bootstrap';
+import './JavaScript/index';
+
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import './CSS/site.css';
 import './CSS/color.css';
