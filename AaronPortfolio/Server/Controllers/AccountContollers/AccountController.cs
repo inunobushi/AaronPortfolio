@@ -13,6 +13,8 @@ using System.Security.Claims;
 using Scheduling.AaronPortfolio.Server.Middleware.Authentication;
 using Scheduling.AaronPortfolio.Server.Helpers;
 using Microsoft.AspNetCore.Authorization;
+using MongoDB.Driver;
+using System.Net;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -23,7 +25,6 @@ namespace AaronPortfolio.Server.Account.Controllers
     {
 
         private IAuthenticationService _authService;
-        private IRegistrationService _registrationService;
         private ICommonServices _commonServices;
         private IManageAccountService _manageAccountService;
         private IMapper _mapper;
@@ -32,7 +33,6 @@ namespace AaronPortfolio.Server.Account.Controllers
 
         public AccountController(
             IAuthenticationService authService,
-            IRegistrationService registrationService,
             ICommonServices commonServices,
             IManageAccountService manageAccountService,
             IMapper mapper,
@@ -41,39 +41,11 @@ namespace AaronPortfolio.Server.Account.Controllers
         {
             _context = new DataContext(settings);
             _authService = authService;
-            _registrationService = registrationService;
             _commonServices = commonServices;
             _manageAccountService = manageAccountService;
             _mapper = mapper;
             _appSettings = appSettings.Value;
         }
-
-        
-        // POST api/values
-        [AllowAnonymous]
-        [HttpPost("register")]
-		public IActionResult Register([FromBody]UserViewModel userDto)
-		{
-            if (!ModelState.IsValid)
-            {
-                return BadRequest("Enter valid data");
-            }
-
-            var newUser  = _mapper.Map<UserSchema>(userDto);
-
-            try
-            {
-                // save 
-                _registrationService.Create(newUser, userDto.Password);
-
-                return Ok();
-            }
-            catch (AppException ex)
-            {
-                // return error message if there was an exception
-                return BadRequest(ex.Message);
-            }
-		}
 
         // POST api/values
         [AllowAnonymous]
