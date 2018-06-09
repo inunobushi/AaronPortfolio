@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Security.Cryptography;
-using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using MongoDB.Driver;
 using Scheduling.AaronPortfolio.Server.Models;
 using Scheduling.AaronPortfolio.Server.Helpers;
 using Microsoft.Extensions.Options;
+using System.Net;
+using Scheduling.AaronPortfolio.Server.ViewModels;
 
 namespace Scheduling.AaronPortfolio.Server.Middleware.Authentication
 {
     public interface IRegistrationService
     {
-        void Create(UserSchema user, string password);
+        HttpStatusCode Create(UserViewModel userDto, string password);
     }
 
     public class Registration : IRegistrationService
@@ -24,39 +25,52 @@ namespace Scheduling.AaronPortfolio.Server.Middleware.Authentication
         }
 
 
-        public async void Create(UserSchema user, string password)
+        public HttpStatusCode Create(UserViewModel userDto, string password)
         {
             // validation
-            if (string.IsNullOrWhiteSpace(password))
-                throw new AppException("Password is required");
+            if (string.IsNullOrWhiteSpace(userDto.Password))
+            {
+                return HttpStatusCode.NotAcceptable;
+                }
 
-            var filter = Builders<UserSchema>.Filter.Eq(s => s.Username, user.Username);
+            var filter = Builders<UserSchema>.Filter.Eq(s => s.Username, userDto.Username);
             var userResult = _context.Users.Find(filter).FirstOrDefault();
 
-            if (userResult!=null)
-                throw new AppException("Username " + user.Username + " is already taken");
+            if (userResult == null)
+                return HttpStatusCode.Found;
+            byte[] passwordHash, passwordSalt;
+            CreatePasswordHash(password, out passwordHash, out passwordSalt);
+            UserSchema user = new UserSchema()
+            {
+                Email = userDto.Email,
+                FirstName = userDto.FirstName,
+                LastName = userDto.LastName,
+                Username = userDto.Username,
+                PasswordHash = passwordHash,
+                PasswordSalt = passwordSalt
+            };
 
-            //byte[] passwordHash, passwordSalt;
-            //CreatePasswordHash(password, out passwordHash, out passwordSalt);
+            try
+            {
+                _context.Users.InsertOne(user);
+                return HttpStatusCode.OK;
+            }
+            catch (Exception ex)
+            {
+                return HttpStatusCode.BadRequest;
+            }
 
-            //user.PasswordHash = passwordHash;
-            //user.PasswordSalt = passwordSalt;
-
-            await _context.Users.InsertOneAsync(user);
         }
 
-        // private helper methods
+         //private helper methods
 
-        //private static void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
-        //{
-        //    if (password == null) throw new ArgumentNullException("password");
-        //    if (string.IsNullOrWhiteSpace(password)) throw new ArgumentException("Value cannot be empty or whitespace only string.", "password");
-
-        //    using (var hmac = new System.Security.Cryptography.HMACSHA512())
-        //    {
-        //        passwordSalt = hmac.Key;
-        //        passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
-        //    }
-        //}
+        private static void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
+        {
+            using (var hmac = new HMACSHA512())
+            {
+                passwordSalt = hmac.Key;
+                passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
+            }
+        }
     }
 }
