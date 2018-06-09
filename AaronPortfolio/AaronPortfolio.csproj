@@ -50,6 +50,7 @@
     <Folder Include="Server\Helpers\" />
     <Folder Include="Server\Middleware\Authentication\" />
     <Folder Include="Server\Middleware\Contact\" />
+    <Folder Include="Server\Controllers\AccountContollers\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="ClientApp\Components\NavMenuComponent\NavMenu\NavMenu.tsx" />
