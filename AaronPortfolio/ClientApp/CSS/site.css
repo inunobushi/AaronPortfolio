@@ -31,6 +31,10 @@
     text-decoration: none;
 }
 
+.site-title {
+    text-decoration: none;
+}
+
 @media screen and (max-width: 767px) {
 /* The side navigation menu */
 .sidenav {
