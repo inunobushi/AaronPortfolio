@@ -15,8 +15,9 @@ export class ContactFormComponent extends React.Component <IContactFields, {}>{
         this.contactSubmit = this.contactSubmit.bind(this);
         this.updateFirstName = this.updateFirstName.bind(this);
         this.updateLastName = this.updateLastName.bind(this);
+        this.updateEmail = this.updateEmail.bind(this);
         this.updateSubject = this.updateSubject.bind(this);
-        this.updateLastName = this.updateLastName.bind(this);
+        this.updateMessage = this.updateMessage.bind(this);
     }
 
     updateFirstName = (e) => this.props.updateFieldContact(e, 'FirstName');
