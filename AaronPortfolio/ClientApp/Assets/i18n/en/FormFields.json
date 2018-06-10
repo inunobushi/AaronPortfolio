@@ -1,0 +1,103 @@
+{
+    "Fields": {
+        "Reg": {
+            "FirstName": [
+                {"store":"FirstName"},
+                {"state": "updateFirstName"},
+                {"id":"name"},
+                {"className":""},
+                {"placeholder": "First Name"}
+            ],
+            "LastName": [
+                {"store":"LastName"},
+                {"state": "updateLastName"},
+                {"id":"name"},
+                {"className":""},
+                {"placeholder": "Last Name"}
+            ],
+            "Username": [
+                {"store":"Username"},
+                {"state": "updateUsername"},
+                {"id":"name"},
+                {"className":""},
+                {"placeholder": "Email"}
+            ],
+            "Email": [
+                {"store":"Email"},
+                {"state": "updateEmail"},
+                {"id":"name"},
+                {"className":""},
+                {"placeholder": "updateFirstName"}
+            ],
+            "Password": [
+                {"store":"Password"},
+                {"state": "updatePassword"},
+                {"id":"name"},
+                {"className":""},
+                {"placeholder": "updateFirstName"}
+            ],
+            "PasswordConfirm": [
+                {"store":"PasswordConfirm"},
+                {"state": "updatePasswordConfirm"},
+                {"id":"name"},
+                {"className":""},
+                {"placeholder": "updateFirstName"}
+            ],
+            "updateAuth":"updateFieldAuth"
+        },
+        "Contact": {
+            "FirstName": [
+                {"store":"FirstName"},
+                {"state":"updateFirstName"},
+                {"id":"name"},
+                {"className":""},
+                {"placeholder": "First Name"}
+            ],
+            "LastName": [
+                {"store":"LastName"},
+                {"state":"updateLastName"},
+                {"id":"name"},
+                {"className":""},
+                {"placeholder": "Last Name"}
+            ],
+            "Email": [
+                {"store":"Email"},
+                {"state":"updateEmail"},
+                {"id":"email"},
+                {"className":"email"},
+                {"placeholder": "Email"}
+            ],
+            "Subject": [
+                {"store": "Subject"},
+                {"state":"updateSubject"},
+                {"id":"msg_subject"},
+                {"className":"email"},
+                {"placeholder": "Subject"}
+            ],
+            "Message": [
+                {"store":"Message"},
+                {"state":"updateMessage"},
+                {"id":""},
+                {"className":""},
+                {"placeholder": "Message"}
+            ],
+            "updateContact":"updateFieldContact"
+        },
+        "Login": {
+            "Email": {
+                "store":"Email",
+                "state":"updateEmail",
+                "id":"email",
+                "className":"email",
+                "placeholder": "Email"
+            },
+            "Password": {
+                "store":"Password",
+                "state": "updatePassword",
+                "id":"name",
+                "className":"",
+                "placeholder": "updateFirstName"
+            }
+        }
+    }
+}
