@@ -23,55 +23,20 @@ namespace AaronPortfolio.Server.Account.Controllers
     [Route("api/[controller]")]
     public class AccountController : Controller
     {
-
-        private IAuthenticationService _authService;
         private ICommonServices _commonServices;
         private IManageAccountService _manageAccountService;
         private IMapper _mapper;
-        private readonly AppSettings _appSettings;
-        private readonly DataContext _context = null;
+
 
         public AccountController(
-            IAuthenticationService authService,
             ICommonServices commonServices,
             IManageAccountService manageAccountService,
-            IMapper mapper,
-            IOptions<Settings> settings,
-            IOptions<AppSettings> appSettings)
+            IMapper mapper
+        )
         {
-            _context = new DataContext(settings);
-            _authService = authService;
             _commonServices = commonServices;
             _manageAccountService = manageAccountService;
             _mapper = mapper;
-            _appSettings = appSettings.Value;
-        }
-
-        // POST api/values
-        [AllowAnonymous]
-		[HttpPost("login")]
-        public void Login([FromBody]LoginViewModel user, UserSchema mongo)
-        {
-            var loginUser = _authService.Authenticate(user.Username, user.Password);
-
-            if (user == null)
-            {
-                Unauthorized();
-            }
-
-            //var tokenHandler = new JwtSecurityTokenHandler();
-            //var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
-            //var tokenDescriptor = new SecurityTokenDescriptor
-            //{
-            //    Subject = new ClaimsIdentity(new Claim[]
-            //    {
-            //        new Claim(ClaimTypes.Name, mongo.Id.ToString())
-            //    }),
-            //    Expires = DateTime.UtcNow.AddDays(7),
-            //    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
-            //};
-            //var token = tokenHandler.CreateToken(tokenDescriptor);
-            //var tokenString = tokenHandler.WriteToken(token);
         }
 
         [HttpGet]
