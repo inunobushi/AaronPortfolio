@@ -36,8 +36,9 @@ namespace Scheduling.AaronPortfolio.Server.Middleware.Authentication
             var filter = Builders<UserSchema>.Filter.Eq(s => s.Username, userDto.Username);
             var userResult = _context.Users.Find(filter).FirstOrDefault();
 
-            if (userResult == null)
+            if (userResult != null)
                 return HttpStatusCode.Found;
+            
             byte[] passwordHash, passwordSalt;
             CreatePasswordHash(password, out passwordHash, out passwordSalt);
             UserSchema user = new UserSchema()
@@ -55,7 +56,7 @@ namespace Scheduling.AaronPortfolio.Server.Middleware.Authentication
                 _context.Users.InsertOne(user);
                 return HttpStatusCode.OK;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return HttpStatusCode.BadRequest;
             }

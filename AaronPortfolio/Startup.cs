@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
@@ -18,24 +14,30 @@ using Scheduling.AaronPortfolio.Server.Middleware.Authentication;
 
 namespace Scheduling
 {
-    public class UserServices
-    {
-        private IAuthenticationService _authService;
-        private IRegistrationService _registrationService;
-        private ICommonServices _commonServices;
-        private IManageAccountService _manageAccountService;
-        private IMapper _mapper;
-        private readonly AppSettings _appSettings;
-    }
 
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(
+            IConfiguration configuration
+
+        //    IAuthenticationService _authService,
+        //ICommonServices _commonServices,
+        //IManageAccountService _manageAccountService,
+        //IMapper _mapper,
+        //AppSettings appSettings
+        )
         {
             Configuration = configuration;
+            //_context = new DataContext(settings);
+            //_authService = authService;
+            //_commonServices = commonServices;
+            //_manageAccountService = manageAccountService;
+            //_mapper = mapper;
+            //_appSettings = appSettings.Value;
         }
 
         public IConfiguration Configuration { get; }
+        //private readonly AppSettings _appSettings;
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -48,6 +50,15 @@ namespace Scheduling
 
             });
             services.AddAutoMapper();
+            services.AddMvc();
+
+
+
+            // configure DI for application services
+            services.AddScoped<IAuthenticationService, Authentication>();
+            services.AddScoped<IRegistrationService, Registration>();
+            services.AddScoped<ICommonServices, CommonMethods>();
+            services.AddScoped<IManageAccountService, ManageAccount>();
 
             // configure strongly typed settings objects
             //var appSettingsSection = Configuration.GetSection("AppSettings");
@@ -74,14 +85,7 @@ namespace Scheduling
             //    };
             //});
 
-            // configure DI for application services
-            services.AddScoped<IAuthenticationService, Authentication>();
-            services.AddScoped<IRegistrationService, Registration>();
-            services.AddScoped<ICommonServices, CommonMethods>();
-            services.AddScoped<IManageAccountService, ManageAccount>();
 
-
-            services.AddMvc();
 
 
 
@@ -115,7 +119,8 @@ namespace Scheduling
             }
 
             app.UseStaticFiles();
-
+            app.UseAuthentication();
+            //app.UseJwtBearerAuthentication();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
