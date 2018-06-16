@@ -47,6 +47,8 @@ namespace AaronPortfolio.Server.Controllers.AccountContollers
 
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+
+            //debug tokenDescriptor variable
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new Claim[]
