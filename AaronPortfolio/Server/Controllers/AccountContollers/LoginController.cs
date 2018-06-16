@@ -36,7 +36,7 @@ namespace AaronPortfolio.Server.Controllers.AccountContollers
         // POST api/values
         [AllowAnonymous]
         [HttpPost("login")]
-        public void Login([FromBody]LoginViewModel user, UserSchema mongo)
+        public IActionResult Login([FromBody]LoginViewModel user, UserSchema mongo)
         {
             var loginUser = _authService.Authenticate(user.Username, user.Password);
 
@@ -58,6 +58,15 @@ namespace AaronPortfolio.Server.Controllers.AccountContollers
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
             var tokenString = tokenHandler.WriteToken(token);
+
+            // return basic user info (without password) and token to store client side
+            return Ok(new
+            {
+                user.Username,
+                user.FirstName,
+                user.LastName,
+                token = tokenString
+            });
         }
     }
 }

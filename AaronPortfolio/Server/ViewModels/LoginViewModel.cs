@@ -18,5 +18,7 @@ namespace Scheduling.AaronPortfolio.Server.ViewModels
 			get;
 			set;
 		}
+        public object FirstName { get; internal set; }
+        public object LastName { get; internal set; }
     }
 }
