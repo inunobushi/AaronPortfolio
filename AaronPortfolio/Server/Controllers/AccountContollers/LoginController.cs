@@ -40,7 +40,7 @@ namespace AaronPortfolio.Server.Controllers.AccountContollers
         {
             var loginUser = _authService.Authenticate(user.Username, user.Password);
 
-            if (user == null)
+            if (loginUser == null)
             {
                 Unauthorized();
             }
