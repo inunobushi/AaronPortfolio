@@ -21,7 +21,7 @@ namespace Scheduling
         public Startup(
             IConfiguration configuration
 
-        //    IAuthenticationService _authService,
+        //IAuthenticationService _authService,
         //ICommonServices _commonServices,
         //IManageAccountService _manageAccountService,
         //IMapper _mapper,
