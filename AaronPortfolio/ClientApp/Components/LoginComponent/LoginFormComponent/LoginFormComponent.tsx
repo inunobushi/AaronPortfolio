@@ -17,18 +17,18 @@ export class LoginFormComponent extends React.Component <ILoginFields, {}>{
     constructor(props:any){
         super(props);
         this.loginUser = this.loginUser.bind(this);
-        this.updateEmail = this.updateEmail.bind(this);
+        this.updateUsername = this.updateUsername.bind(this);
         this.updatePassword = this.updatePassword.bind(this);
     }
     private AuthService: AuthService = new AuthService();
     
-    updateEmail = (e) => this.props.updateFieldLogin(e, 'Email');
+    updateUsername = (e) => this.props.updateFieldLogin(e, 'Username');
     updatePassword = (e) => this.props.updateFieldLogin(e, 'Password');
 
     loginUser (e){
         e.preventDefault();
-        const {Email, Password } = this.props;
-        const user: LoginModel = new LoginModel( Email, Password);
+        const {Username, Password } = this.props;
+        const user: LoginModel = new LoginModel( Username, Password);
         this.props.submitLogin(user);
     }
 
@@ -41,9 +41,9 @@ export class LoginFormComponent extends React.Component <ILoginFields, {}>{
                         <fieldset>
                             <div className="form-group">
                                 <div className="ui-input-group">
-                                    <input type="text" onChange={this.updateEmail} 
-                                    value={this.props.Email}
-                                    className="form-control email" placeholder="Email" id="email" required/>
+                                    <input type="text" onChange={this.updateUsername} 
+                                    value={this.props.Username}
+                                    className="form-control email" placeholder="Username" id="email" required/>
                                     <span className="input-bar"></span>
                                 </div>
                             </div>
@@ -69,7 +69,7 @@ export class LoginFormComponent extends React.Component <ILoginFields, {}>{
 const mapStateToProps = (store) => {
 
     return {
-        Email: store.login.Email,
+        Username: store.login.UserName,
         Password: store.login.Password
     }
   }
