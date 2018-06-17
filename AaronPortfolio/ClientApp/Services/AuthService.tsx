@@ -1,9 +1,6 @@
 ﻿import axios from 'axios';
 import {LoginModel} from '../Models/Login.Model';
 
-interface IAuthServiceProps {
-    isLoggedIn: boolean;
-}
 
 export default class AuthService {
 
@@ -16,7 +13,7 @@ export default class AuthService {
    
         isLoggedIn = false;
     
-        setIsLoggedIn = (token: string) => {
+        setIsLoggedIn(token: string) {
             this.isLoggedIn = true;
             localStorage.setItem('token', token);
         }
@@ -26,7 +23,15 @@ export default class AuthService {
         }
 
         login(user:LoginModel){
+            //this.setIsLoggedIn('');
             return axios.post('api/login/login', user, { headers: { 'Content-Type': 'application/json' } })
+                    .then( (response) => {
+                        console.log(response);
+                        this.setIsLoggedIn(response.data.token);
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
         }
 
         logout(){
