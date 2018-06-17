@@ -55,7 +55,7 @@ namespace Scheduling
             services.AddMvcCore()
                     .AddAuthorization()
                     .AddJsonFormatters(options => options.ContractResolver = new CamelCasePropertyNamesContractResolver());
-            services.AddMvc();
+            
 
 
 
@@ -69,7 +69,7 @@ namespace Scheduling
             var appSettingsSection = Configuration.GetSection("AppSettings");
             services.Configure<AppSettings>(appSettingsSection);
 
-            //// configure jwt authentication
+            // configure jwt authentication
             var appSettings = appSettingsSection.Get<AppSettings>();
             var key = Encoding.ASCII.GetBytes(appSettings.Secret);
             services.AddAuthentication(x =>
@@ -89,11 +89,7 @@ namespace Scheduling
                     ValidateAudience = false
                 };
             });
-
-
-
-
-
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -125,7 +121,7 @@ namespace Scheduling
 
             app.UseStaticFiles();
             app.UseAuthentication();
-            //app.UseJwtBearerAuthentication();
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
