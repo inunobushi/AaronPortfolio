@@ -6,10 +6,11 @@ const loginForm = ( dispatch: any, user: any) => {
     // return dispatch => { 
         LoginAPI.Login(user).then((data: any)=> {
             console.log(data);
-            this.AuthService.setIsLoggedIn(data['token']);
+            let service = new AuthService();
+            service.setIsLoggedIn(data['token']);
             dispatch({type: LOGIN_USER, payload: data})
             }).catch(err => {
-                console.log('err');
+                console.log('err', err);
             })
     // }
 }
