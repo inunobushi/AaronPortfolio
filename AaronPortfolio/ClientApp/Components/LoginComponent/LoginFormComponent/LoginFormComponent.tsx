@@ -69,7 +69,7 @@ export class LoginFormComponent extends React.Component <ILoginFields, {}>{
 const mapStateToProps = (store) => {
 
     return {
-        Username: store.login.UserName,
+        Username: store.login.Username,
         Password: store.login.Password
     }
   }
