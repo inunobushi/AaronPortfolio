@@ -28,6 +28,7 @@ export default class AuthService {
                     .then( (response) => {
                         console.log(response);
                         this.setIsLoggedIn(response.data.token);
+                        return response.data;
                     })
                     .catch(function (error) {
                         console.log(error);
