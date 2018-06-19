@@ -54,7 +54,8 @@ class NavbarComponent extends React.Component<INavbarDrawer, any> {
     }
 
     isUserLoggedIn() {
-        return this.AuthService.getIsLoggedIn();
+        const auth = this.props['authData'];
+        return auth && auth.currentUser;
     };
     logout = () => {
         this.AuthService.logout();
@@ -64,6 +65,7 @@ class NavbarComponent extends React.Component<INavbarDrawer, any> {
 
 
     render() {
+        console.log(this.props['authData']);
         return (
             <div className="menubar">
                 <div className="menubar-content">
