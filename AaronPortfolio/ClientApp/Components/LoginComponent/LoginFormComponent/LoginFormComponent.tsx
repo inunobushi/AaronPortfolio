@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 
-import login from '../../../Actions/LoginActions';
+import { loginAction } from '../../../Actions/AuthActions';
 import AuthService from '../../../Services/AuthService';
 import { LoginModel }from '../../../Models/login.model';
 import { ILoginFields } from '../../../Interfaces/LoginInterface';
@@ -76,7 +76,7 @@ const mapStateToProps = (store) => {
   
   const mapDispatchToProps = (dispatch) => ({
     updateFieldLogin: (event, field) => dispatch({ type: UPDATE_FIELD_LOGIN, field, payload: event.target.value }),
-    submitLogin: (user) => login(dispatch, user),
+    submitLogin: (user) => loginAction(dispatch, user),
   })
 
   export default connect(mapStateToProps, mapDispatchToProps)(LoginFormComponent);
