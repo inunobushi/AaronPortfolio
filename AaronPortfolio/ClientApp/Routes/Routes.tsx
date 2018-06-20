@@ -12,6 +12,12 @@ import { WebError } from '../Components/ErrorComponent/Error';
 import PrivateRoute from '../Services/AnonymousRoute';
 
 export const App = (props:any) => {
+
+        // const requireAuth = (nextState, replace) => {
+        //         if(){
+        //                 replace()
+        //         }
+        // }
         const width = window.innerWidth;
         const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href')!;
         return (

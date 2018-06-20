@@ -1,5 +1,9 @@
 {
   "name": "AaronPortfolio",
+  "author": {
+    "name": "Ethan Burrow Fairweather aka 晴天闘牙丸",
+    "url": "www.ebseiten.com"
+  },
   "private": true,
   "version": "0.0.0",
   "devDependencies": {
