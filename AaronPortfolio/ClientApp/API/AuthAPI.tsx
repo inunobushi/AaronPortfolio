@@ -1,4 +1,7 @@
 import axios from 'axios';
+import AuthService from '../Services/AuthService';
+
+const Auth = new AuthService();
 
 const Registration = (user) => {
    return axios.post('api/registration/register', user, { headers: { 'Content-Type': 'application/json' } })
@@ -6,4 +9,13 @@ const Registration = (user) => {
    .catch(res => {console.log(res)});
    }
 
-export default {Registration};
+
+const Login = (user: any) =>{
+    return Auth.login(user);
+}
+
+const Logout = () => {
+    return Auth.logout();
+}
+
+export default {Registration, Login, Logout};

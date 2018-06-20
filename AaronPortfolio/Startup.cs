@@ -11,6 +11,7 @@ using System.Text;
 using Scheduling.AaronPortfolio.Server.Helpers;
 using Scheduling.AaronPortfolio.Server.Models;
 using Scheduling.AaronPortfolio.Server.Middleware.Authentication;
+using Newtonsoft.Json.Serialization;
 
 namespace Scheduling
 {
@@ -20,7 +21,7 @@ namespace Scheduling
         public Startup(
             IConfiguration configuration
 
-        //    IAuthenticationService _authService,
+        //IAuthenticationService _authService,
         //ICommonServices _commonServices,
         //IManageAccountService _manageAccountService,
         //IMapper _mapper,
@@ -50,7 +51,11 @@ namespace Scheduling
 
             });
             services.AddAutoMapper();
-            services.AddMvc();
+            services.AddOptions();
+            services.AddMvcCore()
+                    .AddAuthorization()
+                    .AddJsonFormatters(options => options.ContractResolver = new CamelCasePropertyNamesContractResolver());
+            
 
 
 
@@ -61,34 +66,30 @@ namespace Scheduling
             services.AddScoped<IManageAccountService, ManageAccount>();
 
             // configure strongly typed settings objects
-            //var appSettingsSection = Configuration.GetSection("AppSettings");
-            //services.Configure<AppSettings>(appSettingsSection);
+            var appSettingsSection = Configuration.GetSection("AppSettings");
+            services.Configure<AppSettings>(appSettingsSection);
 
-            //// configure jwt authentication
-            //var appSettings = appSettingsSection.Get<AppSettings>();
-            //var key = Encoding.ASCII.GetBytes(appSettings.Secret);
-            //services.AddAuthentication(x =>
-            //{
-            //    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-            //    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            //})
-            //.AddJwtBearer(x =>
-            //{
-            //    x.RequireHttpsMetadata = false;
-            //    x.SaveToken = true;
-            //    x.TokenValidationParameters = new TokenValidationParameters
-            //    {
-            //        ValidateIssuerSigningKey = true,
-            //        IssuerSigningKey = new SymmetricSecurityKey(key),
-            //        ValidateIssuer = false,
-            //        ValidateAudience = false
-            //    };
-            //});
-
-
-
-
-
+            // configure jwt authentication
+            var appSettings = appSettingsSection.Get<AppSettings>();
+            var key = Encoding.ASCII.GetBytes(appSettings.Secret);
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -120,7 +121,7 @@ namespace Scheduling
 
             app.UseStaticFiles();
             app.UseAuthentication();
-            //app.UseJwtBearerAuthentication();
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
@@ -134,3 +135,4 @@ namespace Scheduling
         }
     }
 }
+

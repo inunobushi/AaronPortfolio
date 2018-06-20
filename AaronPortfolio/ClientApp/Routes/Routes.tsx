@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { BrowserRouter, Route,  Switch, HashRouter } from 'react-router-dom';
-import * as ReactDOM from 'react-dom';
 import { HomeComponent } from '../Components/HomeComponent/HomeComponent';
 import { AboutComponent } from '../Components/AboutComponent/AboutComponent';
 import { WorkComponent } from '../Components/WorkComponent/WorkComponent';
@@ -23,7 +22,6 @@ export const App = (props:any) => {
                     <Route path="/About" render={()=> <AboutComponent/>}/>
                     <Route path="/Work" render={()=> <WorkComponent/>}/>
                     <Route path="/Login" render={()=> <LoginComponent/>}/>
-                    <Route exact path="/" render={()=> <HomeComponent/>}/>
                     <PrivateRoute path="/Schedule" component={ScheduleComponent}/>
                     <Route path="/Registration" render={()=><RegistrationComponent/>}/>
                     <Route path="/Contact" render={()=> <ContactComponent/>}/>

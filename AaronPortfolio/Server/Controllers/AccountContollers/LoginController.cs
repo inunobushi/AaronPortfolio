@@ -36,28 +36,39 @@ namespace AaronPortfolio.Server.Controllers.AccountContollers
         // POST api/values
         [AllowAnonymous]
         [HttpPost("login")]
-        public void Login([FromBody]LoginViewModel user, UserSchema mongo)
+        public IActionResult Login([FromBody]LoginViewModel user, UserSchema mongo)
         {
             var loginUser = _authService.Authenticate(user.Username, user.Password);
 
-            if (user == null)
+            if (loginUser == null)
             {
                 Unauthorized();
             }
 
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+
+            //debug tokenDescriptor variable
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.Name, mongo.Id.ToString())
+                    new Claim(ClaimTypes.Name, mongo.InternalId.ToString())
                 }),
                 Expires = DateTime.UtcNow.AddDays(7),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
             var tokenString = tokenHandler.WriteToken(token);
+
+            // return basic user info (without password) and token to store client side
+            return Ok(new
+            {
+                user.Username,
+                user.FirstName,
+                user.LastName,
+                token = tokenString
+            });
         }
     }
 }

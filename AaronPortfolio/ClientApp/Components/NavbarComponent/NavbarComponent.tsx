@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 
 // import NavDrawer from '../../Services/NavbarDrawerService';
 import AuthService from '../../services/authService';
+import { logoutAction } from '../../Actions/AuthActions';
 
 interface INavbarDrawer {
     isLoggedIn: boolean;
@@ -54,16 +55,19 @@ class NavbarComponent extends React.Component<INavbarDrawer, any> {
     }
 
     isUserLoggedIn() {
-        return this.AuthService.getIsLoggedIn();
+        const auth = this.props['authData'];
+        return auth && auth.currentUser;
     };
+
     logout = () => {
-        this.AuthService.logout();
+        this.props['logout']();
     }
 
 
 
 
     render() {
+        console.log(this.props['authData']);
         return (
             <div className="menubar">
                 <div className="menubar-content">
@@ -99,13 +103,13 @@ class NavbarComponent extends React.Component<INavbarDrawer, any> {
                                                 {!this.isUserLoggedIn() && <NavLink to="/Login">Login</NavLink>}
                                             </li>
                                             <li>
-                                                {this.isUserLoggedIn() && <NavLink exact to="/" onClick={this.logout}>Logout</NavLink>}
-                                            </li>
-                                            <li>
                                                 {this.isUserLoggedIn() && <NavLink to="/Schedule">Schedule</NavLink>}
                                             </li>
                                             <li>
                                                 {!this.isUserLoggedIn() && <NavLink to="/Registration">Registration</NavLink>}
+                                            </li>
+                                            <li>
+                                                {this.isUserLoggedIn() && <NavLink to="/" onClick={this.logout}>Logout</NavLink>}
                                             </li>
                                             <li>
                                                 <NavLink to="/Contact">Contact</NavLink>
@@ -132,8 +136,8 @@ const mapStateToProps = (store) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        updateHeaderText: (data) => dispatch({ type: 'UPDATE_HEADER_TEXT', payload: data })
-
+        updateHeaderText: (data) => dispatch({ type: 'UPDATE_HEADER_TEXT', payload: data }),
+        logout: () => logoutAction(dispatch)
     }
 }
 
