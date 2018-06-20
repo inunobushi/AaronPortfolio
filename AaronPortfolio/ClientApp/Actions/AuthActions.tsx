@@ -1,10 +1,10 @@
-import { LOGIN_USER } from '../Constants/Constants';
-import LoginAPI from '../API/LoginAPI';
+import { LOGIN_USER, LOGOUT_USER } from '../Constants/Constants';
+import AuthAPI from '../API/AuthAPI';
 import AuthService from '../Services/AuthService';
 
-const loginForm = ( dispatch: any, user: any) => {
+const loginAction = ( dispatch: any, user: any) => {
     // return dispatch => { 
-        LoginAPI.Login(user).then((data: any)=> {
+        AuthAPI.Login(user).then((data: any)=> {
             console.log(data);
             let service = new AuthService();
             service.setIsLoggedIn(data['token']);
@@ -15,4 +15,9 @@ const loginForm = ( dispatch: any, user: any) => {
     // }
 }
 
-export default loginForm;
+const logoutAction = ( dispatch: any) => {
+    AuthAPI.Logout();
+    return dispatch({type: LOGOUT_USER});
+}
+
+export {loginAction, logoutAction};
